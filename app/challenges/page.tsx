@@ -116,7 +116,7 @@ export default function ChallengeDetailPage() {
           <div className="flex items-center justify-center h-64">
             <div className="text-center space-y-2">
               <div className="text-lg font-medium">Challenge not found</div>
-              <p className="text-muted-foreground">The challenge you're looking for doesn't exist.</p>
+              <p className="text-muted-foreground">The challenge you&apos;re looking for does not exist.</p>
               <Button onClick={() => router.back()} className="mt-4">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Challenges

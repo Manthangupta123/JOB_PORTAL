@@ -411,7 +411,7 @@ export default function CommunityFeedPage() {
                   <span className="font-medium">89</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-muted-foreground">This Week's Posts</span>
+                  <span className="text-sm text-muted-foreground">This Week&apos;s Posts</span>
                   <span className="font-medium">156</span>
                 </div>
                 <div className="flex justify-between">
