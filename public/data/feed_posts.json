@@ -1,0 +1,188 @@
+[
+  {
+    "id": "POST-2024-001",
+    "authorType": "Department",
+    "authorName": "Department of Computer Science & Engineering",
+    "authorTitle": "Official Department Account",
+    "authorAvatar": "https://images.unsplash.com/photo-1562774053-701939374585?w=150&h=150&fit=crop&crop=face",
+    "postDate": "2024-08-20T14:30:00Z",
+    "content": "🎉 Incredible results from our Q3 AI Code Assessment! \n\nOur students continue to push the boundaries of innovation:\n✅ 156 projects evaluated with an average JRI score of 78.4\n✅ 89% of projects now implement advanced security practices\n✅ 23 high-performing projects showcasing breakthrough AI integration\n✅ Notable 23% reduction in code complexity across all submissions\n\nSpecial congratulations to Meera Gupta (STU-020) for achieving the highest JRI score of 90.8 with her AI-Enhanced Learning Management System! 🏆\n\nThe correlation between AI usage and innovation scores (0.78) demonstrates our students are not just adopting technology, but mastering it to create meaningful solutions.\n\nProud to see our department leading in:\n🔹 AI-driven development practices\n🔹 Security-first coding standards\n🔹 Comprehensive documentation culture\n🔹 Real-world impact through technology\n\n#Innovation #AIEducation #TechExcellence #ProudMoment #CSE2024",
+    "likes": 234,
+    "comments": 45,
+    "shares": 67,
+    "engagement": {
+      "topComments": [
+        {
+          "author": "Dr. Rajesh Kumar",
+          "content": "Outstanding achievement! The improvement in security practices is particularly impressive.",
+          "likes": 23
+        },
+        {
+          "author": "Alumni Network",
+          "content": "Great to see our alma mater maintaining its reputation for excellence!",
+          "likes": 18
+        }
+      ]
+    },
+    "hashtags": ["#Innovation", "#AIEducation", "#TechExcellence", "#ProudMoment", "#CSE2024"],
+    "mediaAttachments": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400",
+        "alt": "Students working on AI projects in computer lab"
+      }
+    ]
+  },
+  {
+    "id": "POST-2024-002",
+    "authorType": "Faculty",
+    "authorName": "Prof. Anita Sharma",
+    "authorTitle": "Head of Quality Assurance & Academic Standards",
+    "authorAvatar": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    "postDate": "2024-08-19T11:15:00Z",
+    "content": "Reflecting on our latest comprehensive assessment report, I'm genuinely amazed by the quantum leap our students have made in code quality and innovation! 📊\n\nWhat stands out to me as an educator:\n\n🔬 **Research-Grade Quality**: Our students aren't just coding; they're conducting research. The 18% improvement in maintainability index shows they're thinking about long-term impact.\n\n🧠 **AI as a Tool, Not a Crutch**: The positive correlation (0.78) between AI usage and innovation scores proves our students are using AI strategically to amplify their creativity, not replace it.\n\n🛡️ **Security Consciousness**: 91.2% security score average - our students understand that great code isn't just functional, it's secure and responsible.\n\n📚 **Documentation Excellence**: Seeing 134 projects with complete API documentation warms my academic heart. They're building for others, not just themselves.\n\nTo my students: You're not just learning technology, you're shaping it. Keep pushing boundaries, keep asking 'why' and 'what if', and remember - every line of code you write has the potential to change the world.\n\nTo fellow educators: Let's celebrate this generation of thoughtful, innovative, and responsible technologists. The future is in excellent hands! 🌟\n\n#ProudEducator #QualityEducation #InnovativeStudents #TechLeadership #AcademicExcellence",
+    "likes": 189,
+    "comments": 32,
+    "shares": 28,
+    "engagement": {
+      "topComments": [
+        {
+          "author": "Meera Gupta",
+          "content": "Thank you Prof. Sharma for your constant guidance and encouragement! 🙏",
+          "likes": 45
+        },
+        {
+          "author": "Dr. Vikram Patel",
+          "content": "Beautifully articulated, Anita. Your dedication to quality shows in these results.",
+          "likes": 31
+        }
+      ]
+    },
+    "hashtags": ["#ProudEducator", "#QualityEducation", "#InnovativeStudents", "#TechLeadership", "#AcademicExcellence"],
+    "mediaAttachments": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400",
+        "alt": "Faculty member reviewing student projects"
+      }
+    ]
+  },
+  {
+    "id": "POST-2024-003",
+    "authorType": "Department",
+    "authorName": "Department of Information Technology",
+    "authorTitle": "Official IT Department",
+    "authorAvatar": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=150&h=150&fit=crop&crop=face",
+    "postDate": "2024-08-18T16:45:00Z",
+    "content": "🚀 HACKATHON ALERT: Get Ready to Code for Change! 🚀\n\nWe're thrilled to announce FOUR incredible hackathon opportunities coming up this semester:\n\n🤖 **AI for Social Impact** (Sept 15-17)\n→ Healthcare, Education, Environment\n→ ₹5.5L in prizes + Mentorship\n→ 48 hours to change the world\n\n💰 **FinTech Innovation Challenge** (Oct 5-6)\n→ Digital payments, Blockchain, AI Finance\n→ ₹9.3L prize pool + Accelerator programs\n→ Industry mentors from top banks & startups\n\n🏙️ **Smart Cities & IoT** (Nov 12-14)\n→ Traffic management, Environmental monitoring\n→ ₹10.5L prizes + Pilot project opportunities\n→ 54 hours of intensive innovation\n\n⚡ **Quantum Computing Challenge** (Dec 8-10)\n→ Quantum algorithms, Post-quantum cryptography\n→ ₹13.5L total prizes + Research collaborations\n→ For the brave and brilliant!\n\nWhy participate?\n✨ Real industry problems to solve\n✨ Mentorship from tech leaders\n✨ Networking with innovators\n✨ Career opportunities\n✨ Prize money & recognition\n\nOur recent audit shows students with hackathon experience score 15% higher on innovation metrics. Time to level up your skills! 💪\n\nRegistrations open now. Which challenge calls to you?\n\n#HackathonSeason #TechForGood #Innovation #StudentOpportunity #CodeToWin",
+    "likes": 312,
+    "comments": 78,
+    "shares": 145,
+    "engagement": {
+      "topComments": [
+        {
+          "author": "TechClub President",
+          "content": "Our club is definitely participating in the AI for Social Impact hackathon!",
+          "likes": 34
+        },
+        {
+          "author": "Final Year Student",
+          "content": "The FinTech challenge aligns perfectly with my career goals. Count me in! 💳",
+          "likes": 28
+        }
+      ]
+    },
+    "hashtags": ["#HackathonSeason", "#TechForGood", "#Innovation", "#StudentOpportunity", "#CodeToWin"],
+    "mediaAttachments": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=400",
+        "alt": "Students collaborating during hackathon"
+      }
+    ]
+  },
+  {
+    "id": "POST-2024-004",
+    "authorType": "Faculty",
+    "authorName": "Dr. Rajesh Kumar",
+    "authorTitle": "Senior AI Research Analyst & Associate Professor",
+    "authorAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    "postDate": "2024-08-17T09:20:00Z",
+    "content": "Just finished reviewing the most fascinating AI audit report of my career, and I had to share some insights that got me genuinely excited about the future! 🤖✨\n\nAs someone who's been in AI research for over 15 years, what I'm seeing from our students isn't just impressive - it's revolutionary:\n\n🔍 **The 'AI Native' Generation**: These students don't just use AI tools; they think in AI paradigms. They're designing systems where human creativity and machine intelligence dance together beautifully.\n\n📈 **Quality Through Intelligence**: The 0.78 correlation between AI usage and innovation isn't coincidence. Students using AI strategically are asking better questions, exploring wider solution spaces, and iterating faster.\n\n🛠️ **Beyond the Hype**: What excites me most? They're not falling for AI snake oil. They're using it where it adds real value - personalized learning, predictive analytics, pattern recognition - and staying human-centered in their approach.\n\n💡 **The Meera Gupta Phenomenon**: Students like Meera (congrats on that 90.8 JRI score!) represent something special - they're not just coding solutions, they're architecting experiences that learn and adapt.\n\n🌟 **Research Implications**: The methodology improvements we're seeing suggest our students are ready for graduate-level research. Several projects could easily transition to conference papers.\n\nTo my students: You're living proof that the best AI applications come from understanding both the technology AND the human problem you're solving. Keep that balance!\n\nTo fellow researchers: We need to study this cohort. They're showing us the future of human-AI collaboration in real-time.\n\n#AIResearch #FutureOfTech #ProudMentor #InnovationInEducation #HumanAICollaboration",
+    "likes": 267,
+    "comments": 54,
+    "shares": 89,
+    "engagement": {
+      "topComments": [
+        {
+          "author": "Prof. Anita Sharma",
+          "content": "Beautifully articulated, Rajesh! The 'AI Native' concept is spot on.",
+          "likes": 42
+        },
+        {
+          "author": "Research Scholar",
+          "content": "Dr. Kumar, would love to discuss potential research collaborations based on these findings!",
+          "likes": 38
+        },
+        {
+          "author": "Industry Partner",
+          "content": "We're seeing similar patterns in our graduate hires. This generation thinks differently about problem-solving.",
+          "likes": 35
+        }
+      ]
+    },
+    "hashtags": ["#AIResearch", "#FutureOfTech", "#ProudMentor", "#InnovationInEducation", "#HumanAICollaboration"],
+    "mediaAttachments": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400",
+        "alt": "AI research lab with students working on advanced projects"
+      }
+    ]
+  },
+  {
+    "id": "POST-2024-005",
+    "authorType": "Department",
+    "authorName": "Department of Physics & Computing",
+    "authorTitle": "Interdisciplinary Department",
+    "authorAvatar": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=150&h=150&fit=crop&crop=face",
+    "postDate": "2024-08-16T13:10:00Z",
+    "content": "🌌 When Physics Meets Computing: Celebrating Breakthrough Innovation! 🌌\n\nWe're absolutely thrilled to spotlight one of our standout projects from the recent assessment:\n\n🏆 **Quantum Computing Simulator by STU-142**\n→ JRI Score: 88.9 (Top 3 institution-wide!)\n→ Combines quantum physics principles with advanced computing\n→ Educational tool that makes quantum concepts accessible\n\nWhat makes this project exceptional:\n\n⚛️ **Mathematical Precision**: Every quantum gate operation mathematically verified\n🎯 **Educational Impact**: Complex quantum concepts simplified for learning\n🔬 **Research Quality**: Code that could support actual quantum research\n💡 **Innovation Factor**: Novel visualization techniques for quantum states\n\nThis represents exactly what interdisciplinary education should achieve - students who can bridge the gap between theoretical physics and practical computing applications.\n\nOur department's unique approach:\n✨ Physics-informed algorithm design\n✨ Computational thinking applied to physical phenomena\n✨ Real-world problem solving through scientific computing\n✨ Preparing students for the quantum computing revolution\n\nWith quantum technologies becoming mainstream (IBM, Google, Microsoft all investing heavily), our students are perfectly positioned to lead this transformation.\n\nSpecial mention to our other standout projects:\n🔹 Particle physics simulation frameworks\n🔹 Computational astrophysics tools\n🔹 Climate modeling applications\n🔹 Medical imaging algorithms\n\nThe future belongs to those who can think across disciplines. Our students are ready! 🚀\n\nInterested in quantum computing? Our December hackathon awaits! 😉\n\n#QuantumComputing #InterdisciplinaryLearning #PhysicsAndTech #Innovation #QuantumLeap #STEM",
+    "likes": 198,
+    "comments": 41,
+    "shares": 67,
+    "engagement": {
+      "topComments": [
+        {
+          "author": "Dr. Vikram Patel",
+          "content": "Exemplary work bridging theory and application. This is the future of education!",
+          "likes": 29
+        },
+        {
+          "author": "Quantum Research Lab",
+          "content": "Would love to see this project presented at our next symposium!",
+          "likes": 24
+        },
+        {
+          "author": "STU-142",
+          "content": "Thank you for the recognition! Excited to continue pushing quantum boundaries! 🙏",
+          "likes": 19
+        }
+      ]
+    },
+    "hashtags": ["#QuantumComputing", "#InterdisciplinaryLearning", "#PhysicsAndTech", "#Innovation", "#QuantumLeap", "#STEM"],
+    "mediaAttachments": [
+      {
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400",
+        "alt": "Quantum computing visualization and physics equations"
+      },
+      {
+        "type": "video",
+        "url": "https://example.com/quantum-simulator-demo.mp4",
+        "alt": "Demo of quantum computing simulator in action",
+        "thumbnail": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300"
+      }
+    ]
+  }
+]

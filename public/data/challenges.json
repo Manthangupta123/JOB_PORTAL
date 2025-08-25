@@ -1,0 +1,284 @@
+[
+  {
+    "id": "HACK-2024-001",
+    "title": "AI for Social Impact Hackathon",
+    "description": "Develop innovative AI solutions to address pressing social challenges including healthcare accessibility, education equality, environmental sustainability, and community welfare.",
+    "theme": "Technology for Good",
+    "startDate": "2024-09-15T09:00:00Z",
+    "endDate": "2024-09-17T18:00:00Z",
+    "duration": "48 hours",
+    "status": "upcoming",
+    "registrationDeadline": "2024-09-10T23:59:59Z",
+    "maxTeamSize": 4,
+    "eligibility": ["Undergraduate students", "Graduate students", "Recent graduates (within 2 years)"],
+    "venue": {
+      "name": "Tech Innovation Center",
+      "address": "123 Innovation Drive, Bangalore, Karnataka",
+      "capacity": 200,
+      "facilities": ["High-speed WiFi", "Power outlets", "Collaboration spaces", "Presentation rooms"]
+    },
+    "challenges": [
+      {
+        "track": "Healthcare AI",
+        "problem": "Create an AI system to improve early disease detection in underserved communities",
+        "sponsor": "MedTech Solutions Pvt Ltd",
+        "prizePool": "₹2,00,000"
+      },
+      {
+        "track": "Education Technology",
+        "problem": "Develop an AI-powered platform for personalized learning in rural areas",
+        "sponsor": "EduFuture Foundation",
+        "prizePool": "₹1,50,000"
+      },
+      {
+        "track": "Environmental Sustainability",
+        "problem": "Build AI tools for monitoring and reducing carbon footprint in smart cities",
+        "sponsor": "GreenTech Innovations",
+        "prizePool": "₹1,80,000"
+      }
+    ],
+    "mentors": [
+      {
+        "name": "Dr. Priya Nair",
+        "role": "AI Research Scientist",
+        "company": "Indian Institute of Science",
+        "expertise": ["Machine Learning", "Healthcare AI"]
+      },
+      {
+        "name": "Arjun Mehta",
+        "role": "Senior Data Scientist",
+        "company": "Flipkart",
+        "expertise": ["NLP", "Recommendation Systems"]
+      }
+    ],
+    "prizes": {
+      "first": "₹3,00,000 + Internship opportunities",
+      "second": "₹2,00,000 + Mentorship program",
+      "third": "₹1,00,000 + Industry networking",
+      "specialCategories": ["Best AI Innovation", "Most Impactful Solution", "People's Choice Award"]
+    },
+    "requirements": {
+      "technicalStack": "Any programming language/framework",
+      "deliverables": ["Working prototype", "Pitch presentation", "Technical documentation", "Demo video"],
+      "judging": ["Technical innovation (30%)", "Social impact (30%)", "Implementation quality (25%)", "Presentation (15%)"]
+    },
+    "registrationLink": "https://hackathon.techcenter.org/ai-social-impact",
+    "contactEmail": "hackathon@techcenter.org"
+  },
+  {
+    "id": "HACK-2024-002",
+    "title": "FinTech Innovation Challenge",
+    "description": "Revolutionary fintech solutions to transform digital payments, banking services, financial inclusion, and blockchain technologies for the next generation of financial services.",
+    "theme": "Future of Finance",
+    "startDate": "2024-10-05T08:00:00Z",
+    "endDate": "2024-10-06T20:00:00Z",
+    "duration": "36 hours",
+    "status": "upcoming",
+    "registrationDeadline": "2024-09-28T23:59:59Z",
+    "maxTeamSize": 5,
+    "eligibility": ["All students", "Young professionals (under 30)", "Startup founders"],
+    "venue": {
+      "name": "Financial District Convention Center",
+      "address": "456 Finance Street, Mumbai, Maharashtra",
+      "capacity": 300,
+      "facilities": ["Trading floor simulation", "API testing lab", "Blockchain nodes", "Security testing environment"]
+    },
+    "challenges": [
+      {
+        "track": "Digital Payments",
+        "problem": "Create next-generation payment solutions for rural and urban markets",
+        "sponsor": "PayTech Innovations",
+        "prizePool": "₹3,50,000"
+      },
+      {
+        "track": "Blockchain & DeFi",
+        "problem": "Build decentralized financial products for emerging markets",
+        "sponsor": "CryptoFuture Labs",
+        "prizePool": "₹3,00,000"
+      },
+      {
+        "track": "AI in Finance",
+        "problem": "Develop AI-powered tools for fraud detection and risk assessment",
+        "sponsor": "SecureBank Technologies",
+        "prizePool": "₹2,80,000"
+      }
+    ],
+    "mentors": [
+      {
+        "name": "Rakesh Sharma",
+        "role": "Head of Digital Innovation",
+        "company": "ICICI Bank",
+        "expertise": ["Digital Banking", "Payment Systems"]
+      },
+      {
+        "name": "Neha Gupta",
+        "role": "Blockchain Solutions Architect",
+        "company": "Infosys Finacle",
+        "expertise": ["Blockchain", "Smart Contracts", "DeFi"]
+      },
+      {
+        "name": "Vikash Kumar",
+        "role": "Chief Technology Officer",
+        "company": "Paytm",
+        "expertise": ["Scalable Systems", "Mobile Payments"]
+      }
+    ],
+    "prizes": {
+      "first": "₹5,00,000 + Accelerator program entry",
+      "second": "₹3,00,000 + Industry mentorship",
+      "third": "₹1,50,000 + Internship opportunities",
+      "specialCategories": ["Most Innovative Use of AI", "Best Blockchain Implementation", "Security Excellence Award"]
+    },
+    "requirements": {
+      "technicalStack": "Open source preferred, APIs provided",
+      "deliverables": ["MVP", "Business plan", "Security audit", "Live demo"],
+      "judging": ["Market viability (25%)", "Technical execution (25%)", "Innovation (25%)", "Security & compliance (25%)"]
+    },
+    "registrationLink": "https://fintechchallenge.mumbai.gov.in",
+    "contactEmail": "info@fintechchallenge.mumbai.gov.in"
+  },
+  {
+    "id": "HACK-2024-003",
+    "title": "Smart Cities & IoT Innovation Hackathon",
+    "description": "Design and develop cutting-edge IoT solutions to create smarter, more sustainable cities. Focus on urban planning, traffic management, waste management, and citizen services.",
+    "theme": "Connected Urban Future",
+    "startDate": "2024-11-12T10:00:00Z",
+    "endDate": "2024-11-14T16:00:00Z",
+    "duration": "54 hours",
+    "status": "upcoming",
+    "registrationDeadline": "2024-11-05T23:59:59Z",
+    "maxTeamSize": 6,
+    "eligibility": ["Engineering students", "Computer science students", "Urban planning students", "Working professionals"],
+    "venue": {
+      "name": "Smart City Innovation Hub",
+      "address": "789 Urban Tech Park, Pune, Maharashtra",
+      "capacity": 250,
+      "facilities": ["IoT hardware lab", "Sensor testing area", "3D printing facility", "Drone testing zone"]
+    },
+    "challenges": [
+      {
+        "track": "Traffic & Mobility",
+        "problem": "Intelligent traffic management system using IoT and AI",
+        "sponsor": "Urban Mobility Solutions",
+        "prizePool": "₹4,00,000"
+      },
+      {
+        "track": "Environmental Monitoring",
+        "problem": "Real-time air quality and pollution monitoring network",
+        "sponsor": "GreenCity Technologies",
+        "prizePool": "₹3,50,000"
+      },
+      {
+        "track": "Citizen Services",
+        "problem": "Smart governance platform for citizen engagement and service delivery",
+        "sponsor": "Municipal Corporation",
+        "prizePool": "₹3,00,000"
+      }
+    ],
+    "mentors": [
+      {
+        "name": "Dr. Amit Joshi",
+        "role": "IoT Solutions Architect",
+        "company": "Tata Consultancy Services",
+        "expertise": ["IoT Architecture", "Edge Computing"]
+      },
+      {
+        "name": "Sunita Reddy",
+        "role": "Smart Cities Consultant",
+        "company": "McKinsey & Company",
+        "expertise": ["Urban Planning", "Digital Transformation"]
+      },
+      {
+        "name": "Rohit Agarwal",
+        "role": "Principal Engineer",
+        "company": "Cisco Systems",
+        "expertise": ["Network Infrastructure", "5G/IoT Integration"]
+      }
+    ],
+    "prizes": {
+      "first": "₹6,00,000 + Pilot project opportunity",
+      "second": "₹4,00,000 + Government partnership",
+      "third": "₹2,00,000 + Industry collaboration",
+      "specialCategories": ["Most Scalable Solution", "Sustainability Champion", "Citizen Impact Award"]
+    },
+    "requirements": {
+      "technicalStack": "Arduino, Raspberry Pi, Cloud platforms provided",
+      "deliverables": ["Working prototype", "Scalability plan", "Cost analysis", "Deployment strategy"],
+      "judging": ["Technical feasibility (30%)", "Scalability (25%)", "Social impact (25%)", "Innovation (20%)"]
+    },
+    "registrationLink": "https://smartcity-hack.pune.gov.in",
+    "contactEmail": "hackathon@pune-smartcity.org"
+  },
+  {
+    "id": "HACK-2024-004",
+    "title": "Quantum Computing & Cryptography Challenge",
+    "description": "Explore the frontiers of quantum computing applications and next-generation cryptographic solutions. Develop quantum algorithms, security protocols, and hybrid classical-quantum systems.",
+    "theme": "Quantum Leap",
+    "startDate": "2024-12-08T09:00:00Z",
+    "endDate": "2024-12-10T17:00:00Z",
+    "duration": "56 hours",
+    "status": "upcoming",
+    "registrationDeadline": "2024-11-30T23:59:59Z",
+    "maxTeamSize": 3,
+    "eligibility": ["Advanced undergraduate", "Graduate students", "PhD candidates", "Research professionals"],
+    "venue": {
+      "name": "Quantum Research Institute",
+      "address": "321 Quantum Campus, IIT Delhi, New Delhi",
+      "capacity": 120,
+      "facilities": ["Quantum simulators", "High-performance computing cluster", "Specialized quantum software", "Research library access"]
+    },
+    "challenges": [
+      {
+        "track": "Quantum Algorithms",
+        "problem": "Develop quantum algorithms for optimization problems in logistics",
+        "sponsor": "IBM Quantum Network",
+        "prizePool": "₹5,00,000"
+      },
+      {
+        "track": "Post-Quantum Cryptography",
+        "problem": "Design quantum-resistant security protocols for financial systems",
+        "sponsor": "Quantum Security Labs",
+        "prizePool": "₹4,50,000"
+      },
+      {
+        "track": "Quantum Machine Learning",
+        "problem": "Create hybrid quantum-classical ML models for drug discovery",
+        "sponsor": "BioQuantum Research",
+        "prizePool": "₹4,00,000"
+      }
+    ],
+    "mentors": [
+      {
+        "name": "Prof. Deepak Dhar",
+        "role": "Quantum Computing Researcher",
+        "company": "Indian Institute of Science",
+        "expertise": ["Quantum Algorithms", "Theoretical Physics"]
+      },
+      {
+        "name": "Dr. Kavita Bala",
+        "role": "Quantum Security Specialist",
+        "company": "Defence Research Organization",
+        "expertise": ["Cryptography", "Quantum Security"]
+      },
+      {
+        "name": "Rahul Mishra",
+        "role": "Quantum Software Engineer",
+        "company": "Microsoft Quantum",
+        "expertise": ["Q# Programming", "Quantum Simulators"]
+      }
+    ],
+    "prizes": {
+      "first": "₹8,00,000 + Research collaboration opportunity",
+      "second": "₹5,00,000 + Conference presentation slot",
+      "third": "₹3,00,000 + Quantum computing course access",
+      "specialCategories": ["Most Theoretical Innovation", "Best Practical Application", "Future Impact Award"]
+    },
+    "requirements": {
+      "technicalStack": "Qiskit, Q#, Cirq, classical computing languages",
+      "deliverables": ["Quantum circuit design", "Algorithm implementation", "Performance analysis", "Research paper draft"],
+      "judging": ["Scientific rigor (35%)", "Innovation (30%)", "Practical applicability (20%)", "Presentation quality (15%)"]
+    },
+    "registrationLink": "https://quantum-challenge.iitd.ac.in",
+    "contactEmail": "quantum.hackathon@iitd.ac.in"
+  }
+]
