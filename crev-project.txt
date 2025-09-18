@@ -1,0 +1,4539 @@
+Project Directory Structure:
+├── LICENSE
+├── app
+│   ├── api
+│   │   ├── audit-report
+│   │   │   └── route.ts
+│   │   ├── challenges
+│   │   │   ├── [id]
+│   │   │   │   └── route.ts
+│   │   │   └── route.ts
+│   │   ├── feed
+│   │   │   └── route.ts
+│   │   ├── students
+│   │   │   └── route.ts
+│   ├── challenges
+│   │   ├── [id]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── community
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── leaderboards
+│   │   └── page.tsx
+│   ├── loading.tsx
+│   └── page.tsx
+├── components.json
+├── eslint.config.mjs
+├── src
+│   ├── components
+│   │   ├── navigation.tsx
+│   │   ├── student-drill-down.tsx
+│   │   ├── theme-provider.tsx
+│   │   ├── ui
+│   │   │   ├── avatar.tsx
+│   │   │   ├── badge.tsx
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── dialog.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── progress.tsx
+│   │   │   ├── select.tsx
+│   │   │   ├── separator.tsx
+│   │   │   ├── tabs.tsx
+│   │   │   └── textarea.tsx
+│   ├── lib
+│   │   └── utils.ts
+│   └── pages.tsx
+
+
+File: 
+LICENSE
+Content: 
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+File: 
+app/api/audit-report/route.ts
+Content: 
+import { NextResponse } from "next/server";
+import path from "path";
+import { promises as fs } from "fs";
+
+export async function GET() {
+  try {
+    // Absolute path to /public/data/students.json
+    const dataDirectory = path.join(process.cwd(), "public", "data");
+    const filePath = path.join(dataDirectory, "students.json");
+
+    // Read and parse JSON file
+    const fileContents = await fs.readFile(filePath, "utf8");
+    const jsonData = JSON.parse(fileContents);
+
+    return NextResponse.json(jsonData);
+  } catch (error) {
+    console.error("API Error:", error);
+    return NextResponse.json({ error: "Failed to load data" }, { status: 500 });
+  }
+}
+
+
+File: 
+app/api/challenges/[id]/route.ts
+Content: 
+import { NextResponse } from "next/server";
+import path from "path";
+import { promises as fs } from "fs";
+
+export async function GET() {
+  try {
+    // Absolute path to /public/data/students.json
+    const dataDirectory = path.join(process.cwd(), "public", "data");
+    const filePath = path.join(dataDirectory, "students.json");
+
+    // Read and parse JSON file
+    const fileContents = await fs.readFile(filePath, "utf8");
+    const jsonData = JSON.parse(fileContents);
+
+    return NextResponse.json(jsonData);
+  } catch (error) {
+    console.error("API Error:", error);
+    return NextResponse.json({ error: "Failed to load data" }, { status: 500 });
+  }
+}
+
+
+File: 
+app/api/challenges/route.ts
+Content: 
+import { type NextRequest, NextResponse } from "next/server"
+
+export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+  const challenges = [
+    {
+      id: "1",
+      title: "AI for Social Impact Hackathon",
+      organizer: "Tech for Good Society",
+      theme: "Social Impact",
+      endDate: "2024-02-15",
+      startDate: "2024-02-13",
+      registrationDeadline: "2024-02-10",
+      participants: 156,
+      maxParticipants: 200,
+      description:
+        "Build AI solutions that address real-world social challenges and make a positive impact on communities.",
+      fullDescription:
+        "Join us for an intensive 48-hour hackathon focused on leveraging artificial intelligence to solve pressing social issues. Participants will work in teams to develop innovative AI-powered solutions that address challenges in healthcare accessibility, educational equity, environmental sustainability, and social justice. This event brings together passionate developers, data scientists, designers, and social advocates to create technology that truly makes a difference in people's lives.",
+      type: "hackathon",
+      difficulty: "medium",
+      duration: "48 hours",
+      status: "active",
+      prize: "₹50,000 + Mentorship Program",
+      tags: ["AI", "Machine Learning", "Social Impact", "Healthcare", "Education"],
+      progress: 78,
+      venue: {
+        name: "Innovation Hub, Main Campus",
+        address: "Block A, Ground Floor",
+        capacity: 200,
+      },
+      tracks: [
+        { name: "Healthcare AI", description: "AI solutions for medical diagnosis, treatment, and accessibility" },
+        { name: "Education Technology", description: "Personalized learning and educational accessibility tools" },
+        { name: "Environmental Solutions", description: "AI for climate change and environmental monitoring" },
+      ],
+      mentors: [
+        { name: "Dr. Priya Sharma", expertise: "AI in Healthcare", company: "MedTech Solutions" },
+        { name: "Rahul Gupta", expertise: "EdTech Innovation", company: "LearnSmart AI" },
+        { name: "Sarah Chen", expertise: "Environmental AI", company: "GreenTech Labs" },
+      ],
+      teamSize: { min: 2, max: 4 },
+      rules: [
+        "Teams must consist of 2-4 members",
+        "All code must be written during the hackathon period",
+        "Use of pre-existing libraries and APIs is allowed",
+        "Solutions must address a real social problem",
+        "Final presentation must be completed within 5 minutes",
+        "All team members must be registered participants",
+      ],
+      requirements: [
+        "Basic programming knowledge in Python, JavaScript, or similar",
+        "Understanding of AI/ML concepts (beginner level acceptable)",
+        "Laptop with development environment setup",
+        "Enthusiasm for social impact and problem-solving",
+      ],
+      judging: {
+        criteria: ["Social Impact Potential", "Technical Innovation", "Feasibility", "Presentation Quality"],
+        judges: [
+          { name: "Prof. Anita Desai", role: "AI Research Director" },
+          { name: "Vikram Patel", role: "Social Impact Investor" },
+          { name: "Dr. Lisa Wang", role: "Healthcare Innovation Expert" },
+        ],
+      },
+      timeline: [
+        {
+          phase: "Registration Opens",
+          date: "2024-01-15",
+          description: "Team registration and idea submission begins",
+        },
+        { phase: "Registration Deadline", date: "2024-02-10", description: "Final date for team registration" },
+        {
+          phase: "Hackathon Kickoff",
+          date: "2024-02-13 09:00",
+          description: "Opening ceremony and problem statements revealed",
+        },
+        {
+          phase: "Development Phase",
+          date: "2024-02-13-15",
+          description: "48 hours of intensive development and mentoring",
+        },
+        { phase: "Final Presentations", date: "2024-02-15 14:00", description: "Team presentations and judging" },
+        {
+          phase: "Awards Ceremony",
+          date: "2024-02-15 17:00",
+          description: "Winner announcement and prize distribution",
+        },
+      ],
+      organizers: [
+        { name: "Dr. Rajesh Kumar", role: "Faculty Coordinator", avatar: "/placeholder.svg" },
+        { name: "Priya Patel", role: "Student Lead", avatar: "/placeholder.svg" },
+        { name: "Tech for Good Society", role: "Organizing Committee", avatar: "/placeholder.svg" },
+      ],
+    },
+    {
+      id: "2",
+      title: "FinTech Innovation Challenge",
+      organizer: "Finance Club & Industry Partners",
+      theme: "Financial Technology",
+      endDate: "2024-03-20",
+      startDate: "2024-03-19",
+      registrationDeadline: "2024-03-15",
+      participants: 89,
+      maxParticipants: 150,
+      description:
+        "Develop cutting-edge financial technology solutions for the next generation of banking and payments.",
+      fullDescription:
+        "Dive into the world of financial technology and create innovative solutions that could reshape how we handle money, investments, and financial services. This 36-hour intensive challenge focuses on developing secure, user-friendly, and scalable FinTech applications. Participants will tackle real problems in digital payments, blockchain technology, personal finance management, and AI-driven financial advisory services.",
+      type: "hackathon",
+      difficulty: "hard",
+      duration: "36 hours",
+      status: "upcoming",
+      prize: "₹75,000 + Internship Opportunities",
+      tags: ["FinTech", "Blockchain", "Payments", "AI", "Security"],
+      progress: 59,
+      venue: {
+        name: "Business Incubation Center",
+        address: "Block C, 3rd Floor",
+        capacity: 150,
+      },
+      tracks: [
+        { name: "Digital Payments", description: "Next-gen payment solutions and mobile wallets" },
+        { name: "Blockchain & Crypto", description: "Decentralized finance and cryptocurrency applications" },
+        { name: "AI in Finance", description: "Machine learning for trading, risk assessment, and advisory" },
+      ],
+      mentors: [
+        { name: "Amit Sharma", expertise: "Digital Payments", company: "PayTech Solutions" },
+        { name: "Dr. Neha Agarwal", expertise: "Blockchain Technology", company: "CryptoInnovate" },
+        { name: "Ravi Kumar", expertise: "Financial AI", company: "SmartFinance AI" },
+      ],
+      teamSize: { min: 3, max: 5 },
+      rules: [
+        "Teams must have 3-5 members with diverse skill sets",
+        "Focus on real-world financial problems and solutions",
+        "Security and compliance considerations are mandatory",
+        "Use of existing financial APIs and services is encouraged",
+        "Demo must include working prototype",
+        "Business model presentation required",
+      ],
+      requirements: [
+        "Programming experience in web or mobile development",
+        "Basic understanding of financial systems",
+        "Knowledge of security best practices",
+        "Interest in entrepreneurship and innovation",
+      ],
+      judging: {
+        criteria: ["Innovation", "Technical Excellence", "Market Potential", "Security Implementation"],
+        judges: [
+          { name: "Suresh Patel", role: "FinTech Industry Expert" },
+          { name: "Dr. Kavita Singh", role: "Cybersecurity Specialist" },
+          { name: "Arjun Mehta", role: "Venture Capital Partner" },
+        ],
+      },
+      timeline: [
+        { phase: "Registration Opens", date: "2024-02-01", description: "Team formation and registration begins" },
+        { phase: "Pre-event Workshop", date: "2024-03-10", description: "FinTech fundamentals and API workshop" },
+        { phase: "Registration Deadline", date: "2024-03-15", description: "Final registration cutoff" },
+        { phase: "Challenge Begins", date: "2024-03-19 10:00", description: "Kickoff and problem statement release" },
+        { phase: "Mentoring Sessions", date: "2024-03-19-20", description: "Expert mentoring and guidance" },
+        { phase: "Final Pitches", date: "2024-03-20 15:00", description: "Team presentations to judges" },
+        {
+          phase: "Networking & Awards",
+          date: "2024-03-20 18:00",
+          description: "Industry networking and winner announcement",
+        },
+      ],
+      organizers: [
+        { name: "Prof. Deepak Gupta", role: "Faculty Advisor", avatar: "/placeholder.svg" },
+        { name: "Sneha Reddy", role: "Finance Club President", avatar: "/placeholder.svg" },
+        { name: "Industry Partners", role: "Sponsor Representatives", avatar: "/placeholder.svg" },
+      ],
+    },
+    {
+      id: "3",
+      title: "Smart Cities & IoT Innovation Hackathon",
+      organizer: "IoT Research Lab & City Council",
+      theme: "Smart Cities",
+      endDate: "2024-04-25",
+      startDate: "2024-04-23",
+      registrationDeadline: "2024-04-20",
+      participants: 134,
+      maxParticipants: 180,
+      description: "Create IoT solutions for smarter, more sustainable cities of the future.",
+      fullDescription:
+        "Join the revolution in urban technology by developing Internet of Things (IoT) solutions that make cities smarter, more efficient, and more livable. This 54-hour hackathon challenges participants to create innovative IoT applications addressing urban challenges like traffic management, environmental monitoring, waste management, and citizen services. Work with real sensors, cloud platforms, and city data to build prototypes that could be deployed in actual smart city initiatives.",
+      type: "hackathon",
+      difficulty: "medium",
+      duration: "54 hours",
+      status: "upcoming",
+      prize: "₹60,000 + Smart City Pilot Program",
+      tags: ["IoT", "Smart Cities", "Sensors", "Data Analytics", "Sustainability"],
+      progress: 74,
+      venue: {
+        name: "IoT Innovation Lab",
+        address: "Research Block, 2nd Floor",
+        capacity: 180,
+      },
+      tracks: [
+        { name: "Traffic & Mobility", description: "Smart transportation and traffic optimization systems" },
+        { name: "Environmental Monitoring", description: "Air quality, noise, and environmental sensor networks" },
+        { name: "Citizen Services", description: "Digital governance and citizen engagement platforms" },
+      ],
+      mentors: [
+        { name: "Dr. Arun Patel", expertise: "IoT Architecture", company: "SmartCity Solutions" },
+        { name: "Meera Joshi", expertise: "Urban Planning", company: "City Development Corp" },
+        { name: "Kiran Kumar", expertise: "Sensor Networks", company: "IoT Innovations" },
+      ],
+      teamSize: { min: 2, max: 4 },
+      rules: [
+        "Teams of 2-4 members with complementary skills",
+        "Must use at least one IoT sensor or device",
+        "Solutions should address real urban challenges",
+        "Cloud integration and data analytics required",
+        "Sustainability considerations are important",
+        "Working prototype demonstration mandatory",
+      ],
+      requirements: [
+        "Basic programming skills (Python, JavaScript, or C++)",
+        "Understanding of IoT concepts and protocols",
+        "Experience with sensors and microcontrollers (Arduino/Raspberry Pi)",
+        "Cloud platform familiarity (AWS, Azure, or Google Cloud)",
+      ],
+      judging: {
+        criteria: ["Innovation", "Technical Implementation", "Urban Impact", "Scalability"],
+        judges: [
+          { name: "Dr. Sunita Sharma", role: "Smart Cities Expert" },
+          { name: "Rajesh Gupta", role: "IoT Technology Leader" },
+          { name: "Priya Nair", role: "Urban Development Specialist" },
+        ],
+      },
+      timeline: [
+        { phase: "Registration Opens", date: "2024-03-01", description: "Team registration and IoT kit allocation" },
+        { phase: "Hardware Workshop", date: "2024-04-15", description: "IoT hardware and sensor workshop" },
+        { phase: "Registration Deadline", date: "2024-04-20", description: "Final team registration" },
+        { phase: "Hackathon Launch", date: "2024-04-23 09:00", description: "Opening ceremony and challenge briefing" },
+        {
+          phase: "Development Phase",
+          date: "2024-04-23-25",
+          description: "54 hours of development with mentor support",
+        },
+        { phase: "Demo Day", date: "2024-04-25 14:00", description: "Live demonstrations and judging" },
+        {
+          phase: "Awards & Exhibition",
+          date: "2024-04-25 17:00",
+          description: "Public exhibition and awards ceremony",
+        },
+      ],
+      organizers: [
+        { name: "Prof. Vikram Singh", role: "IoT Lab Director", avatar: "/placeholder.svg" },
+        { name: "Anjali Sharma", role: "Research Coordinator", avatar: "/placeholder.svg" },
+        { name: "City Council", role: "Government Partner", avatar: "/placeholder.svg" },
+      ],
+    },
+    {
+      id: "4",
+      title: "Quantum Computing & Cryptography Challenge",
+      organizer: "Advanced Computing Society",
+      theme: "Quantum Technology",
+      endDate: "2024-05-30",
+      startDate: "2024-05-28",
+      registrationDeadline: "2024-05-25",
+      participants: 67,
+      maxParticipants: 100,
+      description: "Explore the frontiers of quantum computing and next-generation cryptographic systems.",
+      fullDescription:
+        "Dive into the cutting-edge world of quantum computing and cryptography in this advanced 56-hour challenge. Participants will work with quantum simulators, quantum algorithms, and post-quantum cryptographic systems to solve complex computational problems. This event is designed for students interested in the future of computing, quantum mechanics applications, and cybersecurity. Teams will develop quantum algorithms, implement cryptographic protocols, and explore the intersection of quantum computing and machine learning.",
+      type: "research-challenge",
+      difficulty: "hard",
+      duration: "56 hours",
+      status: "upcoming",
+      prize: "₹80,000 + Research Internship",
+      tags: ["Quantum Computing", "Cryptography", "Algorithms", "Security", "Research"],
+      progress: 67,
+      venue: {
+        name: "Quantum Research Center",
+        address: "Advanced Computing Block, 4th Floor",
+        capacity: 100,
+      },
+      tracks: [
+        { name: "Quantum Algorithms", description: "Developing and optimizing quantum computational algorithms" },
+        { name: "Post-Quantum Cryptography", description: "Next-generation cryptographic systems and protocols" },
+        { name: "Quantum Machine Learning", description: "ML algorithms adapted for quantum computing platforms" },
+      ],
+      mentors: [
+        { name: "Dr. Quantum Singh", expertise: "Quantum Algorithms", company: "Quantum Research Institute" },
+        { name: "Prof. Crypto Patel", expertise: "Cryptography", company: "CyberSecurity Labs" },
+        { name: "Dr. ML Sharma", expertise: "Quantum ML", company: "Advanced AI Systems" },
+      ],
+      teamSize: { min: 2, max: 3 },
+      rules: [
+        "Teams of 2-3 members with strong mathematical background",
+        "Use of quantum simulators and development frameworks required",
+        "Focus on theoretical soundness and practical implementation",
+        "Research paper submission along with code implementation",
+        "Peer review process for final submissions",
+        "Open source contribution encouraged",
+      ],
+      requirements: [
+        "Strong background in mathematics and computer science",
+        "Understanding of quantum mechanics principles",
+        "Programming experience in Python and quantum frameworks (Qiskit, Cirq)",
+        "Knowledge of cryptographic concepts and algorithms",
+      ],
+      judging: {
+        criteria: [
+          "Theoretical Innovation",
+          "Implementation Quality",
+          "Research Contribution",
+          "Practical Applications",
+        ],
+        judges: [
+          { name: "Dr. Quantum Expert", role: "Quantum Computing Researcher" },
+          { name: "Prof. Crypto Master", role: "Cryptography Authority" },
+          { name: "Dr. Research Leader", role: "Advanced Computing Director" },
+        ],
+      },
+      timeline: [
+        {
+          phase: "Registration Opens",
+          date: "2024-04-01",
+          description: "Team registration and prerequisite assessment",
+        },
+        { phase: "Quantum Workshop", date: "2024-05-15", description: "Quantum computing fundamentals workshop" },
+        { phase: "Cryptography Seminar", date: "2024-05-20", description: "Advanced cryptography concepts seminar" },
+        { phase: "Registration Deadline", date: "2024-05-25", description: "Final team confirmation" },
+        {
+          phase: "Challenge Begins",
+          date: "2024-05-28 10:00",
+          description: "Problem statements and research challenges released",
+        },
+        {
+          phase: "Research Phase",
+          date: "2024-05-28-30",
+          description: "56 hours of intensive research and development",
+        },
+        {
+          phase: "Paper Presentations",
+          date: "2024-05-30 14:00",
+          description: "Research paper presentations and peer review",
+        },
+        {
+          phase: "Awards & Publication",
+          date: "2024-05-30 18:00",
+          description: "Awards ceremony and research publication opportunities",
+        },
+      ],
+      organizers: [
+        { name: "Dr. Advanced Computing", role: "Research Director", avatar: "/placeholder.svg" },
+        { name: "Quantum Student Society", role: "Student Organization", avatar: "/placeholder.svg" },
+        { name: "Industry Research Partners", role: "Sponsor Mentors", avatar: "/placeholder.svg" },
+      ],
+    },
+  ]
+
+  const challenge = challenges.find((c) => c.id === params.id)
+
+  if (!challenge) {
+    return NextResponse.json({ error: "Challenge not found" }, { status: 404 })
+  }
+
+  return NextResponse.json(challenge)
+}
+
+
+File: 
+app/api/feed/route.ts
+Content: 
+import { NextResponse } from "next/server";
+import path from "path";
+import { promises as fs } from "fs";
+
+export async function GET() {
+  try {
+    // Absolute path to /public/data/students.json
+    const dataDirectory = path.join(process.cwd(), "public", "data");
+    const filePath = path.join(dataDirectory, "students.json");
+
+    // Read and parse JSON file
+    const fileContents = await fs.readFile(filePath, "utf8");
+    const jsonData = JSON.parse(fileContents);
+
+    return NextResponse.json(jsonData);
+  } catch (error) {
+    console.error("API Error:", error);
+    return NextResponse.json({ error: "Failed to load data" }, { status: 500 });
+  }
+}
+
+
+File: 
+app/api/students/route.ts
+Content: 
+import { NextResponse } from "next/server";
+import path from "path";
+import { promises as fs } from "fs";
+
+export async function GET() {
+  try {
+    // Absolute path to /public/data/students.json
+    const dataDirectory = path.join(process.cwd(), "public", "data");
+    const filePath = path.join(dataDirectory, "students.json");
+
+    // Read and parse JSON file
+    const fileContents = await fs.readFile(filePath, "utf8");
+    const jsonData = JSON.parse(fileContents);
+
+    return NextResponse.json(jsonData);
+  } catch (error) {
+    console.error("API Error:", error);
+    return NextResponse.json({ error: "Failed to load data" }, { status: 500 });
+  }
+}
+
+
+File: 
+app/challenges/[id]/page.tsx
+Content: 
+"use client"
+
+import { useEffect, useState } from "react"
+import { useParams, useRouter } from "next/navigation"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Progress } from "@/components/ui/progress"
+import { Separator } from "@/components/ui/separator"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Clock, Users, Trophy, Calendar, CheckCircle, AlertCircle, ArrowLeft, MapPin, BookOpen } from "lucide-react"
+import { Navigation } from "@/components/navigation"
+
+interface Challenge {
+  id: string
+  title: string
+  organizer: string
+  endDate: string
+  participants: number
+  description: string
+  type: "technical" | "aptitude" | "group" | "presentation"
+  difficulty: "easy" | "medium" | "hard"
+  duration: string
+  maxParticipants: number
+  status: "active" | "upcoming" | "completed"
+  prize: string
+  tags: string[]
+  progress?: number
+  fullDescription: string
+  rules: string[]
+  requirements: string[]
+  venue: string
+  startDate: string
+  registrationDeadline: string
+  organizers: Array<{
+    name: string
+    role: string
+    avatar?: string
+  }>
+  timeline: Array<{
+    phase: string
+    date: string
+    description: string
+  }>
+}
+
+export default function ChallengeDetailPage() {
+  const params = useParams()
+  const router = useRouter()
+  const [challenge, setChallenge] = useState<Challenge | null>(null)
+  const [mounted, setMounted] = useState(false)
+  const [isRegistered, setIsRegistered] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!params?.id) return
+
+    const fetchChallenge = async () => {
+      try {
+        // load static JSON from public folder
+        const res = await fetch("data/challenges.json")
+        if (!res.ok) throw new Error("Failed to fetch challenges.json")
+        const data: Challenge[] = await res.json()
+
+        // find challenge by ID
+        const found = data.find((c) => c.id === params.id)
+        setChallenge(found || null)
+      } catch (err) {
+        console.error("Error fetching challenge:", err)
+      }
+    }
+
+    fetchChallenge()
+  }, [params?.id])
+
+  const getStatusBadge = (status: string) => {
+    switch (status) {
+      case "active":
+        return (
+          <Badge className="bg-green-100 text-green-800 hover:bg-green-100">
+            <CheckCircle className="h-3 w-3 mr-1" />
+            Active
+          </Badge>
+        )
+      case "upcoming":
+        return (
+          <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100">
+            <Clock className="h-3 w-3 mr-1" />
+            Upcoming
+          </Badge>
+        )
+      case "completed":
+        return (
+          <Badge className="bg-gray-100 text-gray-800 hover:bg-gray-100">
+            <Trophy className="h-3 w-3 mr-1" />
+            Completed
+          </Badge>
+        )
+      default:
+        return <Badge variant="secondary">{status}</Badge>
+    }
+  }
+
+  const getDifficultyBadge = (difficulty: string) => {
+    switch (difficulty) {
+      case "easy":
+        return <Badge className="bg-green-100 text-green-800 hover:bg-green-100">Easy</Badge>
+      case "medium":
+        return <Badge className="bg-yellow-100 text-yellow-800 hover:bg-yellow-100">Medium</Badge>
+      case "hard":
+        return <Badge className="bg-red-100 text-red-800 hover:bg-red-100">Hard</Badge>
+      default:
+        return <Badge variant="secondary">{difficulty}</Badge>
+    }
+  }
+
+  if (!challenge) {
+    return <div className="p-6">Loading...</div>
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto p-6 space-y-8">
+        <Navigation mounted={mounted} />
+
+        {/* Back Button */}
+        <Button variant="ghost" onClick={() => router.back()} className="flex items-center space-x-2">
+          <ArrowLeft className="h-4 w-4" />
+          <span>Back to Challenges</span>
+        </Button>
+
+        {/* Challenge Header */}
+        <div className="space-y-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold">{challenge.title}</h1>
+              <p className="text-muted-foreground">Organized by {challenge.organizer}</p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {getStatusBadge(challenge.status)}
+              {getDifficultyBadge(challenge.difficulty)}
+            </div>
+          </div>
+
+          {/* Quick Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="flex items-center space-x-2 text-sm">
+              <Users className="h-4 w-4 text-muted-foreground" />
+              <span>
+                {challenge.participants}/{challenge.maxParticipants} participants
+              </span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm">
+              <Clock className="h-4 w-4 text-muted-foreground" />
+              <span>{challenge.duration}</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm">
+              <MapPin className="h-4 w-4 text-muted-foreground" />
+              <span>{challenge.venue}</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm">
+              <Trophy className="h-4 w-4 text-muted-foreground" />
+              <span>{challenge.prize}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-6">
+            {/* Description */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <BookOpen className="h-5 w-5" />
+                  <span>About This Challenge</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">{challenge.fullDescription}</p>
+              </CardContent>
+            </Card>
+
+            {/* Rules */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <AlertCircle className="h-5 w-5" />
+                  <span>Rules & Guidelines</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {challenge.rules.map((rule, index) => (
+                    <li key={index} className="flex items-start space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{rule}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Requirements */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <CheckCircle className="h-5 w-5" />
+                  <span>Requirements</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {challenge.requirements.map((req, index) => (
+                    <li key={index} className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{req}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Timeline */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <Calendar className="h-5 w-5" />
+                  <span>Timeline</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {challenge.timeline.map((item, index) => (
+                    <div key={index} className="flex items-start space-x-4">
+                      <div className="flex flex-col items-center">
+                        <div className="w-3 h-3 bg-primary rounded-full" />
+                        {index < challenge.timeline.length - 1 && <div className="w-0.5 h-8 bg-border mt-2" />}
+                      </div>
+                      <div className="space-y-1 pb-4">
+                        <div className="font-medium">{item.phase}</div>
+                        <div className="text-sm text-muted-foreground">{item.date}</div>
+                        <div className="text-sm text-muted-foreground">{item.description}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Sidebar */}
+          <div className="space-y-6">
+            {/* Registration Card */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Registration</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {challenge.progress && (
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span>Participation</span>
+                      <span>{challenge.progress}%</span>
+                    </div>
+                    <Progress value={challenge.progress} className="h-2" />
+                  </div>
+                )}
+
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span>Registration Deadline:</span>
+                    <span className="font-medium">{challenge.registrationDeadline}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Challenge Date:</span>
+                    <span className="font-medium">{challenge.startDate}</span>
+                  </div>
+                </div>
+
+                <Separator />
+
+                {challenge.status === "active" && (
+                  <Button className="w-full" onClick={() => setIsRegistered(!isRegistered)}>
+                    {isRegistered ? "Registered ✓" : "Join Challenge"}
+                  </Button>
+                )}
+                {challenge.status === "upcoming" && (
+                  <Button variant="outline" className="w-full bg-transparent">
+                    Register Interest
+                  </Button>
+                )}
+                {challenge.status === "completed" && (
+                  <Button variant="secondary" className="w-full">
+                    View Results
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Tags */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Tags</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {challenge.tags.map((tag) => (
+                    <Badge key={tag} variant="outline">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Organizers */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Organizers</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {challenge.organizers.map((organizer, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <Avatar className="h-10 w-10">
+                        <AvatarImage src={organizer.avatar || "/placeholder.svg"} alt={organizer.name} />
+                        <AvatarFallback>
+                          {organizer.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <div className="font-medium text-sm">{organizer.name}</div>
+                        <div className="text-xs text-muted-foreground">{organizer.role}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+File: 
+app/challenges/page.tsx
+Content: 
+"use client"
+
+import { useEffect, useState } from "react"
+import { useParams, useRouter } from "next/navigation"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Progress } from "@/components/ui/progress"
+import { Separator } from "@/components/ui/separator"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Clock, Users, Trophy, Calendar, CheckCircle, AlertCircle, ArrowLeft, MapPin, BookOpen } from "lucide-react"
+import { Navigation } from "@/components/navigation"
+
+interface Challenge {
+  id: string
+  title: string
+  organizer: string
+  endDate: string
+  participants: number
+  description: string
+  type: "technical" | "aptitude" | "group" | "presentation"
+  difficulty: "easy" | "medium" | "hard"
+  duration: string
+  maxParticipants: number
+  status: "active" | "upcoming" | "completed"
+  prize: string
+  tags: string[]
+  progress?: number
+  fullDescription: string
+  rules: string[]
+  requirements: string[]
+  venue: string
+  startDate: string
+  registrationDeadline: string
+  organizers: Array<{
+    name: string
+    role: string
+    avatar?: string
+  }>
+  timeline: Array<{
+    phase: string
+    date: string
+    description: string
+  }>
+}
+
+export default function ChallengeDetailPage() {
+  const params = useParams()
+  const router = useRouter()
+  const [challenge, setChallenge] = useState<Challenge | null>(null)
+  const [mounted, setMounted] = useState(false)
+  const [isRegistered, setIsRegistered] = useState(false)
+
+  useEffect(() => {
+    const fetchChallenge = async () => {
+      try {
+        const response = await fetch(`/data/challenges.json`)
+        const data = await response.json()
+        setChallenge(data)
+      } catch (error) {
+        console.error("Failed to fetch challenge:", error)
+        setChallenge(null)
+      }
+    }
+
+    fetchChallenge()
+    setMounted(true)
+  }, [params.id])
+
+  const getStatusBadge = (status: string) => {
+    switch (status) {
+      case "active":
+        return (
+          <Badge className="bg-green-100 text-green-800 hover:bg-green-100">
+            <CheckCircle className="h-3 w-3 mr-1" />
+            Active
+          </Badge>
+        )
+      case "upcoming":
+        return (
+          <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100">
+            <Clock className="h-3 w-3 mr-1" />
+            Upcoming
+          </Badge>
+        )
+      case "completed":
+        return (
+          <Badge className="bg-gray-100 text-gray-800 hover:bg-gray-100">
+            <Trophy className="h-3 w-3 mr-1" />
+            Completed
+          </Badge>
+        )
+      default:
+        return <Badge variant="secondary">{status}</Badge>
+    }
+  }
+
+  const getDifficultyBadge = (difficulty: string) => {
+    switch (difficulty) {
+      case "easy":
+        return <Badge className="bg-green-100 text-green-800 hover:bg-green-100">Easy</Badge>
+      case "medium":
+        return <Badge className="bg-yellow-100 text-yellow-800 hover:bg-yellow-100">Medium</Badge>
+      case "hard":
+        return <Badge className="bg-red-100 text-red-800 hover:bg-red-100">Hard</Badge>
+      default:
+        return <Badge variant="secondary">{difficulty}</Badge>
+    }
+  }
+
+  if (!challenge) {
+    return (
+      <div className="min-h-screen bg-background">
+        <div className="max-w-7xl mx-auto p-6 space-y-8">
+          <Navigation mounted={mounted} />
+          <div className="flex items-center justify-center h-64">
+            <div className="text-center space-y-2">
+              <div className="text-lg font-medium">Challenge not found</div>
+              <p className="text-muted-foreground">The challenge you&apos;re looking for does not exist.</p>
+              <Button onClick={() => router.back()} className="mt-4">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Challenges
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto p-6 space-y-8">
+        <Navigation mounted={mounted} />
+
+        {/* Back Button */}
+        <Button variant="ghost" onClick={() => router.back()} className="flex items-center space-x-2">
+          <ArrowLeft className="h-4 w-4" />
+          <span>Back to Challenges</span>
+        </Button>
+
+        {/* Challenge Header */}
+        <div className="space-y-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold">{challenge.title}</h1>
+              <p className="text-muted-foreground">Organized by {challenge.organizer}</p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {getStatusBadge(challenge.status)}
+              {getDifficultyBadge(challenge.difficulty)}
+            </div>
+          </div>
+
+          {/* Quick Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="flex items-center space-x-2 text-sm">
+              <Users className="h-4 w-4 text-muted-foreground" />
+              <span>
+                {challenge.participants}/{challenge.maxParticipants} participants
+              </span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm">
+              <Clock className="h-4 w-4 text-muted-foreground" />
+              <span>{challenge.duration}</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm">
+              <MapPin className="h-4 w-4 text-muted-foreground" />
+              <span>{challenge.venue}</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm">
+              <Trophy className="h-4 w-4 text-muted-foreground" />
+              <span>{challenge.prize}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-6">
+            {/* Description */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <BookOpen className="h-5 w-5" />
+                  <span>About This Challenge</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">{challenge.fullDescription}</p>
+              </CardContent>
+            </Card>
+
+            {/* Rules */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <AlertCircle className="h-5 w-5" />
+                  <span>Rules & Guidelines</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {challenge.rules?.map((rule, index) => (
+                    <li key={index} className="flex items-start space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{rule}</span>
+                    </li>
+                  )) || <li className="text-sm text-muted-foreground">No rules specified</li>}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Requirements */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <CheckCircle className="h-5 w-5" />
+                  <span>Requirements</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {challenge.requirements?.map((req, index) => (
+                    <li key={index} className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{req}</span>
+                    </li>
+                  )) || <li className="text-sm text-muted-foreground">No requirements specified</li>}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Timeline */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <Calendar className="h-5 w-5" />
+                  <span>Timeline</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {challenge.timeline?.map((item, index) => (
+                    <div key={index} className="flex items-start space-x-4">
+                      <div className="flex flex-col items-center">
+                        <div className="w-3 h-3 bg-primary rounded-full" />
+                        {index < (challenge.timeline?.length || 0) - 1 && <div className="w-0.5 h-8 bg-border mt-2" />}
+                      </div>
+                      <div className="space-y-1 pb-4">
+                        <div className="font-medium">{item.phase}</div>
+                        <div className="text-sm text-muted-foreground">{item.date}</div>
+                        <div className="text-sm text-muted-foreground">{item.description}</div>
+                      </div>
+                    </div>
+                  )) || <div className="text-sm text-muted-foreground">No timeline available</div>}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Sidebar */}
+          <div className="space-y-6">
+            {/* Registration Card */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Registration</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {challenge.progress && (
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span>Participation</span>
+                      <span>{challenge.progress}%</span>
+                    </div>
+                    <Progress value={challenge.progress} className="h-2" />
+                  </div>
+                )}
+
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span>Registration Deadline:</span>
+                    <span className="font-medium">{challenge.registrationDeadline}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Challenge Date:</span>
+                    <span className="font-medium">{challenge.startDate}</span>
+                  </div>
+                </div>
+
+                <Separator />
+
+                {challenge.status === "active" && (
+                  <Button className="w-full" onClick={() => setIsRegistered(!isRegistered)}>
+                    {isRegistered ? "Registered ✓" : "Join Challenge"}
+                  </Button>
+                )}
+                {challenge.status === "upcoming" && (
+                  <Button variant="outline" className="w-full bg-transparent">
+                    Register Interest
+                  </Button>
+                )}
+                {challenge.status === "completed" && (
+                  <Button variant="secondary" className="w-full">
+                    View Results
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Tags */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Tags</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {challenge.tags?.map((tag) => (
+                    <Badge key={tag} variant="outline">
+                      {tag}
+                    </Badge>
+                  )) || <span className="text-sm text-muted-foreground">No tags available</span>}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Organizers */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Organizers</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {challenge.organizers?.map((organizer, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <Avatar className="h-10 w-10">
+                        <AvatarImage src={organizer.avatar || "/placeholder.svg"} alt={organizer.name} />
+                        <AvatarFallback>
+                          {organizer.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <div className="font-medium text-sm">{organizer.name}</div>
+                        <div className="text-xs text-muted-foreground">{organizer.role}</div>
+                      </div>
+                    </div>
+                  )) || <div className="text-sm text-muted-foreground">No organizers listed</div>}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+File: 
+app/community/page.tsx
+Content: 
+"use client"
+
+import type React from "react"
+
+import { useEffect, useState } from "react"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Textarea } from "@/components/ui/textarea"
+import {
+  Heart,
+  MessageCircle,
+  Share2,
+  Trophy,
+  Briefcase,
+  Users,
+  Calendar,
+  MapPin,
+  ExternalLink,
+  Plus,
+  GraduationCap,
+  UserCheck,
+  Building2,
+} from "lucide-react"
+import { Navigation } from "@/components/navigation"
+
+interface Post {
+  id: string
+  author: {
+    name: string
+    avatar?: string
+    department: string
+    year: string
+    role: "student" | "faculty" | "department" | "admin"
+    designation?: string
+  }
+  content: string
+  type: "achievement" | "placement" | "event" | "discussion" | "announcement"
+  timestamp: string
+  likes: number
+  comments: number
+  shares: number
+  isLiked: boolean
+  tags?: string[]
+  company?: string
+  eventDate?: string
+  location?: string
+}
+
+interface Activity {
+  id: string
+  type: "placement" | "achievement" | "event"
+  title: string
+  description: string
+  count: number
+  icon: React.ReactNode
+}
+
+export default function CommunityFeedPage() {
+  const [posts, setPosts] = useState<Post[]>([])
+  const [newPost, setNewPost] = useState("")
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    // Mock community feed data with enhanced user roles
+    setPosts([
+      {
+        id: "1",
+        author: {
+          name: "Sarah Johnson",
+          department: "Computer Science",
+          year: "4th Year",
+          role: "student",
+        },
+        content:
+          "Just got placed at Google as a Software Engineer! Thank you to all the professors and the T&P cell for the amazing support. The mock interviews really helped! 🎉",
+        type: "placement",
+        timestamp: "2 hours ago",
+        likes: 45,
+        comments: 12,
+        shares: 8,
+        isLiked: false,
+        company: "Google",
+        tags: ["Placement", "Software Engineer", "Google"],
+      },
+      {
+        id: "2",
+        author: {
+          name: "Dr. Priya Sharma",
+          department: "Computer Science",
+          year: "Faculty",
+          role: "faculty",
+          designation: "Professor & Head of Department",
+        },
+        content:
+          "Congratulations to all our students who participated in the Algorithm Mastery Challenge! Your dedication and problem-solving skills continue to impress. Special mention to Mike Chen for securing first place. Keep up the excellent work!",
+        type: "announcement",
+        timestamp: "4 hours ago",
+        likes: 89,
+        comments: 23,
+        shares: 15,
+        isLiked: false,
+        tags: ["Congratulations", "Algorithm Challenge", "Faculty"],
+      },
+      {
+        id: "3",
+        author: {
+          name: "Mike Chen",
+          department: "Electronics",
+          year: "3rd Year",
+          role: "student",
+        },
+        content:
+          "Won first place in the Algorithm Mastery Challenge! The competition was intense but really helped me improve my problem-solving skills. Looking forward to more challenges!",
+        type: "achievement",
+        timestamp: "5 hours ago",
+        likes: 32,
+        comments: 8,
+        shares: 5,
+        isLiked: true,
+        tags: ["Achievement", "Algorithm", "Competition"],
+      },
+      {
+        id: "4",
+        author: {
+          name: "Training & Placement Cell",
+          department: "T&P Administration",
+          year: "Official",
+          role: "department",
+        },
+        content:
+          "📢 IMPORTANT ANNOUNCEMENT: Upcoming Tech Talk - 'Future of AI in Industry' by Dr. Rajesh Kumar, Senior AI Researcher at Microsoft. Date: January 20, 2024. This is a great opportunity to learn from industry experts and network with professionals. Registration link in bio!",
+        type: "event",
+        timestamp: "1 day ago",
+        likes: 156,
+        comments: 34,
+        shares: 67,
+        isLiked: false,
+        eventDate: "January 20, 2024",
+        location: "Main Auditorium",
+        tags: ["Tech Talk", "AI", "Microsoft", "Registration Open"],
+      },
+      {
+        id: "5",
+        author: {
+          name: "Alex Rodriguez",
+          department: "Mechanical",
+          year: "4th Year",
+          role: "student",
+        },
+        content:
+          "Any tips for technical interviews at automotive companies? I have an interview with Tesla next week and would appreciate any advice from seniors who've been through similar processes. Thanks in advance!",
+        type: "discussion",
+        timestamp: "2 days ago",
+        likes: 18,
+        comments: 24,
+        shares: 3,
+        isLiked: false,
+        tags: ["Interview Tips", "Tesla", "Automotive", "Help Needed"],
+      },
+      {
+        id: "6",
+        author: {
+          name: "Prof. Anita Desai",
+          department: "Mechanical Engineering",
+          year: "Faculty",
+          role: "faculty",
+          designation: "Associate Professor",
+        },
+        content:
+          "Great question, Alex! For automotive interviews, focus on: 1) Understanding of automotive systems and manufacturing processes, 2) Problem-solving with real-world constraints, 3) Sustainability and innovation in automotive tech. Best of luck! Feel free to reach out if you need more specific guidance.",
+        type: "discussion",
+        timestamp: "1 day ago",
+        likes: 42,
+        comments: 8,
+        shares: 12,
+        isLiked: false,
+        tags: ["Interview Tips", "Faculty Advice", "Automotive"],
+      },
+      {
+        id: "7",
+        author: {
+          name: "Student Council",
+          department: "Student Affairs",
+          year: "Official",
+          role: "department",
+        },
+        content:
+          "🎉 Celebrating our campus achievements this month: 23 new placements, 8 competition winners, and 5 upcoming industry events! Thank you to all students, faculty, and the T&P cell for making this possible. Together we achieve more! #CampusPride",
+        type: "announcement",
+        timestamp: "3 days ago",
+        likes: 203,
+        comments: 45,
+        shares: 89,
+        isLiked: true,
+        tags: ["Campus Achievements", "Monthly Update", "Community"],
+      },
+    ])
+    setMounted(true)
+  }, [])
+
+  const activities: Activity[] = [
+    {
+      id: "1",
+      type: "placement",
+      title: "Recent Placements",
+      description: "Students placed this week",
+      count: 23,
+      icon: <Briefcase className="h-5 w-5 text-green-600" />,
+    },
+    {
+      id: "2",
+      type: "achievement",
+      title: "Challenge Winners",
+      description: "Competition achievements",
+      count: 8,
+      icon: <Trophy className="h-5 w-5 text-yellow-600" />,
+    },
+    {
+      id: "3",
+      type: "event",
+      title: "Upcoming Events",
+      description: "This month's schedule",
+      count: 5,
+      icon: <Calendar className="h-5 w-5 text-blue-600" />,
+    },
+  ]
+
+  const getPostTypeIcon = (type: string) => {
+    switch (type) {
+      case "placement":
+        return <Briefcase className="h-4 w-4 text-green-600" />
+      case "achievement":
+        return <Trophy className="h-4 w-4 text-yellow-600" />
+      case "event":
+        return <Calendar className="h-4 w-4 text-blue-600" />
+      case "announcement":
+        return <Users className="h-4 w-4 text-purple-600" />
+      default:
+        return <MessageCircle className="h-4 w-4 text-gray-600" />
+    }
+  }
+
+  const getPostTypeBadge = (type: string) => {
+    switch (type) {
+      case "placement":
+        return <Badge className="bg-green-100 text-green-800 hover:bg-green-100">Placement</Badge>
+      case "achievement":
+        return <Badge className="bg-yellow-100 text-yellow-800 hover:bg-yellow-100">Achievement</Badge>
+      case "event":
+        return <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100">Event</Badge>
+      case "announcement":
+        return <Badge className="bg-purple-100 text-purple-800 hover:bg-purple-100">Announcement</Badge>
+      default:
+        return <Badge variant="secondary">Discussion</Badge>
+    }
+  }
+
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
+  }
+
+  const handleLike = (postId: string) => {
+    setPosts(
+      posts.map((post) =>
+        post.id === postId
+          ? { ...post, isLiked: !post.isLiked, likes: post.isLiked ? post.likes - 1 : post.likes + 1 }
+          : post,
+      ),
+    )
+  }
+
+  const handleNewPost = () => {
+    if (newPost.trim()) {
+      const post: Post = {
+        id: Date.now().toString(),
+        author: {
+          name: "You",
+          department: "Computer Science",
+          year: "4th Year",
+          role: "student",
+        },
+        content: newPost,
+        type: "discussion",
+        timestamp: "Just now",
+        likes: 0,
+        comments: 0,
+        shares: 0,
+        isLiked: false,
+      }
+      setPosts([post, ...posts])
+      setNewPost("")
+    }
+  }
+
+  const getRoleIcon = (role: string) => {
+    switch (role) {
+      case "faculty":
+        return <GraduationCap className="h-4 w-4 text-blue-600" />
+      case "department":
+        return <Building2 className="h-4 w-4 text-purple-600" />
+      case "admin":
+        return <UserCheck className="h-4 w-4 text-red-600" />
+      default:
+        return null
+    }
+  }
+
+  const getRoleBadge = (role: string, designation?: string) => {
+    switch (role) {
+      case "faculty":
+        return (
+          <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100 text-xs">
+            <GraduationCap className="h-3 w-3 mr-1" />
+            Faculty
+          </Badge>
+        )
+      case "department":
+        return (
+          <Badge className="bg-purple-100 text-purple-800 hover:bg-purple-100 text-xs">
+            <Building2 className="h-3 w-3 mr-1" />
+            Official
+          </Badge>
+        )
+      case "admin":
+        return (
+          <Badge className="bg-red-100 text-red-800 hover:bg-red-100 text-xs">
+            <UserCheck className="h-3 w-3 mr-1" />
+            Admin
+          </Badge>
+        )
+      default:
+        return (
+          <Badge className="bg-green-100 text-green-800 hover:bg-green-100 text-xs">
+            <Users className="h-3 w-3 mr-1" />
+            Student
+          </Badge>
+        )
+    }
+  }
+
+  const getAuthorDisplayInfo = (author: Post["author"]) => {
+    if (author.role === "faculty" && author.designation) {
+      return {
+        subtitle: author.designation,
+        department: author.department,
+      }
+    }
+    if (author.role === "department") {
+      return {
+        subtitle: author.department,
+        department: "Official Account",
+      }
+    }
+    return {
+      subtitle: `${author.department} • ${author.year}`,
+      department: null,
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto p-6 space-y-8">
+        <Navigation mounted={mounted} />
+
+        <div className="flex justify-between items-center">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold">Community Feed</h1>
+            <p className="text-lg text-slate-500">Connect with students, faculty, and campus community</p>
+          </div>
+          <Button className="bg-primary hover:bg-primary/90">Create Post</Button>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          {/* Sidebar - Activity Summary */}
+          <div className="lg:col-span-1 space-y-6">
+            <Card>
+              <CardHeader>
+                <h3 className="font-semibold">Campus Activity</h3>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {activities.map((activity) => (
+                  <div key={activity.id} className="flex items-center space-x-3">
+                    <div className="flex-shrink-0">{activity.icon}</div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium">{activity.title}</p>
+                      <p className="text-xs text-muted-foreground">{activity.description}</p>
+                    </div>
+                    <div className="text-lg font-bold text-primary">{activity.count}</div>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <h3 className="font-semibold">Community Stats</h3>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-sm text-muted-foreground">Active Students</span>
+                  <span className="font-medium">1,234</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-muted-foreground">Faculty Members</span>
+                  <span className="font-medium">89</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-muted-foreground">This Week&apos;s Posts</span>
+                  <span className="font-medium">156</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-muted-foreground">Engagement Rate</span>
+                  <span className="font-medium">94%</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Main Feed */}
+          <div className="lg:col-span-3 space-y-6">
+            {/* Create Post */}
+            <Card>
+              <CardContent className="pt-6">
+                <div className="space-y-4">
+                  <Textarea
+                    placeholder="Share an update, ask a question, or celebrate an achievement..."
+                    value={newPost}
+                    onChange={(e) => setNewPost(e.target.value)}
+                    className="min-h-[100px]"
+                  />
+                  <div className="flex justify-between items-center">
+                    <div className="flex space-x-2">
+                      <Badge variant="outline" className="cursor-pointer hover:bg-muted">
+                        <Plus className="h-3 w-3 mr-1" />
+                        Achievement
+                      </Badge>
+                      <Badge variant="outline" className="cursor-pointer hover:bg-muted">
+                        <Plus className="h-3 w-3 mr-1" />
+                        Question
+                      </Badge>
+                      <Badge variant="outline" className="cursor-pointer hover:bg-muted">
+                        <Plus className="h-3 w-3 mr-1" />
+                        Event
+                      </Badge>
+                    </div>
+                    <Button onClick={handleNewPost} disabled={!newPost.trim()}>
+                      Post
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Posts Feed */}
+            {posts.map((post) => {
+              const authorInfo = getAuthorDisplayInfo(post.author)
+
+              return (
+                <Card key={post.id} className="hover:shadow-md transition-shadow">
+                  <CardContent className="pt-6">
+                    <div className="space-y-4">
+                      {/* Post Header */}
+                      <div className="flex items-start justify-between">
+                        <div className="flex items-center space-x-3">
+                          <Avatar className="h-12 w-12">
+                            <AvatarImage src={post.author.avatar || "/placeholder.svg"} alt={post.author.name} />
+                            <AvatarFallback
+                              className={`${
+                                post.author.role === "faculty"
+                                  ? "bg-blue-100 text-blue-700"
+                                  : post.author.role === "department"
+                                    ? "bg-purple-100 text-purple-700"
+                                    : "bg-green-100 text-green-700"
+                              }`}
+                            >
+                              {getInitials(post.author.name)}
+                            </AvatarFallback>
+                          </Avatar>
+                          <div className="space-y-1">
+                            <div className="flex items-center space-x-2">
+                              <h4 className="font-semibold text-base">{post.author.name}</h4>
+                              {getRoleIcon(post.author.role)}
+                              {post.type !== "discussion" && (
+                                <div className="flex items-center space-x-1">
+                                  {post.type === "placement" && <Briefcase className="h-4 w-4 text-green-600" />}
+                                  {post.type === "achievement" && <Trophy className="h-4 w-4 text-yellow-600" />}
+                                  {post.type === "event" && <Calendar className="h-4 w-4 text-blue-600" />}
+                                  {post.type === "announcement" && <Users className="h-4 w-4 text-purple-600" />}
+                                </div>
+                              )}
+                            </div>
+                            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                              <span>{authorInfo.subtitle}</span>
+                              <span>•</span>
+                              <span>{post.timestamp}</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              {getRoleBadge(post.author.role, post.author.designation)}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col items-end space-y-1">{getPostTypeBadge(post.type)}</div>
+                      </div>
+
+                      {/* Post Content */}
+                      <div className="space-y-3">
+                        <p className="text-sm leading-relaxed">{post.content}</p>
+
+                        {/* Event Details */}
+                        {post.type === "event" && (post.eventDate || post.location) && (
+                          <div className="bg-blue-50 dark:bg-blue-950/20 rounded-lg p-4 space-y-2 border-l-4 border-blue-500">
+                            <div className="font-medium text-blue-900 dark:text-blue-100 text-sm">Event Details</div>
+                            {post.eventDate && (
+                              <div className="flex items-center space-x-2 text-sm">
+                                <Calendar className="h-4 w-4 text-blue-600" />
+                                <span>{post.eventDate}</span>
+                              </div>
+                            )}
+                            {post.location && (
+                              <div className="flex items-center space-x-2 text-sm">
+                                <MapPin className="h-4 w-4 text-blue-600" />
+                                <span>{post.location}</span>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Company Info for Placements */}
+                        {post.type === "placement" && post.company && (
+                          <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-4 border-l-4 border-green-500">
+                            <div className="flex items-center space-x-2 text-sm">
+                              <Briefcase className="h-4 w-4 text-green-600" />
+                              <span className="font-medium text-green-900 dark:text-green-100">
+                                Placed at {post.company}
+                              </span>
+                              <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Tags */}
+                        {post.tags && (
+                          <div className="flex flex-wrap gap-2">
+                            {post.tags.map((tag) => (
+                              <Badge key={tag} variant="outline" className="text-xs">
+                                #{tag}
+                              </Badge>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Post Actions */}
+                      <div className="flex items-center justify-between pt-3 border-t">
+                        <div className="flex items-center space-x-6">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => handleLike(post.id)}
+                            className={`space-x-2 ${post.isLiked ? "text-red-600" : ""}`}
+                          >
+                            <Heart className={`h-4 w-4 ${post.isLiked ? "fill-current" : ""}`} />
+                            <span>{post.likes}</span>
+                          </Button>
+                          <Button variant="ghost" size="sm" className="space-x-2">
+                            <MessageCircle className="h-4 w-4" />
+                            <span>{post.comments}</span>
+                          </Button>
+                          <Button variant="ghost" size="sm" className="space-x-2">
+                            <Share2 className="h-4 w-4" />
+                            <span>{post.shares}</span>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+File: 
+app/globals.css
+Content: 
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+File: 
+app/layout.tsx
+Content: 
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+
+const inter = Inter({ subsets: ["latin"] })
+
+export const metadata: Metadata = {
+  title: "T&P Admin Dashboard",
+  description: "Training and Placement Admin Dashboard",
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
+
+
+File: 
+app/leaderboards/page.tsx
+Content: 
+"use client"
+
+import { useEffect, useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Trophy, Medal, Award, Building2, Calendar, Code } from "lucide-react"
+import { Navigation } from "@/components/navigation"
+import { StudentDrillDown } from "@/components/student-drill-down"
+
+interface Student {
+  id: string
+  name: string
+  avatar?: string
+  department: string
+  year: string
+  techStack: string
+  jriScore: number
+  placementStatus: "Placed" | "In Process" | "Not Started"
+  company?: string
+}
+
+interface AuditReport {
+  aiSummary: {
+    overview: string
+    keyStrengths: string[]
+    areasForImprovement: string[]
+  }
+  detailedBreakdown: Array<{
+    metric: string
+    score: number
+    summary: string
+  }>
+}
+
+export default function LeaderboardsPage() {
+  const [students, setStudents] = useState<Student[]>([])
+  const [filteredStudents, setFilteredStudents] = useState<Student[]>([])
+  const [mounted, setMounted] = useState(false)
+  const [selectedYear, setSelectedYear] = useState<string>("all")
+  const [selectedDepartment, setSelectedDepartment] = useState<string>("all")
+  const [selectedTechStack, setSelectedTechStack] = useState<string>("all")
+  const [selectedStudent, setSelectedStudent] = useState<Student | null>(null)
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+
+  useEffect(() => {
+    const fetchStudents = async () => {
+      try {
+        const response = await fetch("/api/students")
+        const data = await response.json()
+        const sortedStudents = data.sort((a: Student, b: Student) => b.jriScore - a.jriScore)
+        setStudents(sortedStudents)
+        setFilteredStudents(sortedStudents)
+      } catch (error) {
+        console.error("Failed to fetch students:", error)
+        const mockData = [
+          {
+            id: "1",
+            name: "Alice Johnson",
+            department: "CSE",
+            year: "4th Year",
+            techStack: "React/Node.js",
+            jriScore: 96,
+            placementStatus: "Placed" as const,
+            company: "Google",
+          },
+          {
+            id: "2",
+            name: "Bob Smith",
+            department: "IT",
+            year: "4th Year",
+            techStack: "Python/Django",
+            jriScore: 94,
+            placementStatus: "Placed" as const,
+            company: "Microsoft",
+          },
+          {
+            id: "3",
+            name: "Carol Davis",
+            department: "Mechanical",
+            year: "3rd Year",
+            techStack: "Java/Spring",
+            jriScore: 92,
+            placementStatus: "In Process" as const,
+          },
+          {
+            id: "4",
+            name: "David Wilson",
+            department: "Civil",
+            year: "4th Year",
+            techStack: "C++/Qt",
+            jriScore: 90,
+            placementStatus: "Placed" as const,
+            company: "Tesla",
+          },
+          {
+            id: "5",
+            name: "Eva Brown",
+            department: "CSE",
+            year: "3rd Year",
+            techStack: "React/Node.js",
+            jriScore: 88,
+            placementStatus: "In Process" as const,
+          },
+        ]
+        setStudents(mockData)
+        setFilteredStudents(mockData)
+      }
+    }
+
+    fetchStudents()
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    let filtered = students
+
+    if (selectedYear !== "all") {
+      filtered = filtered.filter((student) => student.year === selectedYear)
+    }
+
+    if (selectedDepartment !== "all") {
+      filtered = filtered.filter((student) => student.department === selectedDepartment)
+    }
+
+    if (selectedTechStack !== "all") {
+      filtered = filtered.filter((student) => student.techStack === selectedTechStack)
+    }
+
+    setFilteredStudents(filtered)
+  }, [students, selectedYear, selectedDepartment, selectedTechStack])
+
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
+  }
+
+  const getPlacementBadgeColor = (status: string) => {
+    switch (status) {
+      case "Placed":
+        return "bg-green-500/10 text-green-500 border-green-500/20"
+      case "In Process":
+        return "bg-yellow-500/10 text-yellow-500 border-yellow-500/20"
+      default:
+        return "bg-gray-500/10 text-gray-500 border-gray-500/20"
+    }
+  }
+
+  const topThree = filteredStudents.slice(0, 3)
+  const restOfStudents = filteredStudents.slice(3)
+
+  const uniqueYears = [...new Set(students.map((s) => s.year))].sort()
+  const uniqueDepartments = [...new Set(students.map((s) => s.department))].sort()
+  const uniqueTechStacks = [...new Set(students.map((s) => s.techStack))].sort()
+
+  const generateMockAuditReport = (student: Student): AuditReport => {
+    return {
+      aiSummary: {
+        overview: `${student.name}'s performance demonstrates strong technical capabilities with excellent problem-solving skills. Their JRI score of ${student.jriScore}% reflects consistent academic and project excellence.`,
+        keyStrengths: [
+          "Strong technical foundation",
+          "Excellent problem-solving skills",
+          "Consistent academic performance",
+          "Good project implementation",
+          "Leadership qualities",
+        ],
+        areasForImprovement: [
+          "Communication skills enhancement",
+          "Industry exposure expansion",
+          "Advanced technology adoption",
+          "Team collaboration improvement",
+        ],
+      },
+      detailedBreakdown: [
+        {
+          metric: "Technical Skills",
+          score: student.jriScore > 85 ? 92 : student.jriScore > 70 ? 78 : 65,
+          summary: "Strong grasp of core technical concepts and implementation",
+        },
+        {
+          metric: "Problem Solving",
+          score: student.jriScore > 85 ? 88 : student.jriScore > 70 ? 75 : 62,
+          summary: "Effective analytical thinking and solution development",
+        },
+        {
+          metric: "Project Quality",
+          score: student.jriScore > 85 ? 90 : student.jriScore > 70 ? 77 : 64,
+          summary: "Well-executed projects with good documentation",
+        },
+        {
+          metric: "Academic Performance",
+          score: student.jriScore > 85 ? 85 : student.jriScore > 70 ? 72 : 58,
+          summary: "Consistent academic excellence across subjects",
+        },
+      ],
+    }
+  }
+
+  const handleStudentClick = (student: Student) => {
+    setSelectedStudent(student)
+    setIsDialogOpen(true)
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto p-6 space-y-8">
+        <Navigation mounted={mounted} />
+
+        <div className="space-y-2">
+          <h1 className="text-3xl font-bold">Student Leaderboard</h1>
+          <p className="text-muted-foreground">Top performing students ranked by JRI Score</p>
+        </div>
+
+        <div className="flex flex-wrap gap-4 p-4 bg-muted/50 rounded-lg">
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Year</label>
+            <Select value={selectedYear} onValueChange={setSelectedYear}>
+              <SelectTrigger className="w-[140px]">
+                <SelectValue placeholder="All Years" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Years</SelectItem>
+                {[...new Set(uniqueYears)].map((year, idx) => (
+                  <SelectItem key={`${year}-${idx}`} value={year}>
+                    {year}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Department</label>
+            <Select value={selectedDepartment} onValueChange={setSelectedDepartment}>
+              <SelectTrigger className="w-[160px]">
+                <SelectValue placeholder="All Departments" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Departments</SelectItem>
+                <SelectItem value="CSE">CSE</SelectItem>
+                <SelectItem value="IT">IT</SelectItem>
+                <SelectItem value="Mechanical">Mechanical</SelectItem>
+                <SelectItem value="Civil">Civil</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Tech Stack</label>
+            <Select value={selectedTechStack} onValueChange={setSelectedTechStack}>
+              <SelectTrigger className="w-[160px]">
+                <SelectValue placeholder="All Tech Stacks" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Tech Stacks</SelectItem>
+                {[...new Set(uniqueTechStacks)].map((stack, idx) => (
+                  <SelectItem key={`${stack}-${idx}`} value={stack}>
+                    {stack}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {topThree.map((student, index) => {
+            const position = index + 1
+            const icons = [
+              <Trophy key="trophy" className="h-8 w-8 text-yellow-500" />,
+              <Medal key="medal" className="h-8 w-8 text-gray-400" />,
+              <Award key="award" className="h-8 w-8 text-amber-600" />,
+            ]
+
+            return (
+              <Card
+                key={student.id}
+                className={`relative cursor-pointer hover:shadow-lg transition-shadow ${position === 1 ? "ring-2 ring-yellow-500/20" : ""}`}
+                onClick={() => {
+                  console.log("[v0] Top 3 card clicked:", student.name)
+                  handleStudentClick(student)
+                }}
+              >
+                <CardHeader className="text-center pb-2">
+                  <div className="flex justify-center mb-2">{icons[index]}</div>
+                  <CardTitle className="text-lg">#{position}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center space-y-4">
+                  <Avatar className="h-16 w-16 mx-auto">
+                    <AvatarImage src={student.avatar || "/placeholder.svg"} alt={student.name} />
+                    <AvatarFallback>{getInitials(student.name)}</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <h3 className="font-semibold text-lg">{student.name}</h3>
+                    <p className="text-sm text-muted-foreground">{student.department}</p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="text-2xl font-bold text-primary">{student.jriScore}%</div>
+                    <Badge className={getPlacementBadgeColor(student.placementStatus)}>{student.placementStatus}</Badge>
+                    {student.company && <p className="text-sm font-medium">{student.company}</p>}
+                  </div>
+                </CardContent>
+              </Card>
+            )
+          })}
+        </div>
+
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold">Complete Rankings</h2>
+          <div className="space-y-3">
+            {restOfStudents.map((student, index) => {
+              const position = index + 4
+              return (
+                <Card
+                  key={student.id}
+                  className="p-4 cursor-pointer hover:shadow-lg transition-shadow"
+                  onClick={() => {
+                    console.log("[v0] Student card clicked:", student.name)
+                    handleStudentClick(student)
+                  }}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-muted font-semibold">
+                        #{position}
+                      </div>
+
+                      <Avatar className="h-10 w-10">
+                        <AvatarImage src={student.avatar || "/placeholder.svg"} alt={student.name} />
+                        <AvatarFallback>{getInitials(student.name)}</AvatarFallback>
+                      </Avatar>
+
+                      <div className="space-y-1">
+                        <h3 className="font-semibold">{student.name}</h3>
+                        <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                          <div className="flex items-center space-x-1">
+                            <Building2 className="h-3 w-3" />
+                            <span>{student.department}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="h-3 w-3" />
+                            <span>{student.year}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Code className="h-3 w-3" />
+                            <span>{student.techStack}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center space-x-4">
+                      <Badge className={getPlacementBadgeColor(student.placementStatus)}>
+                        {student.placementStatus}
+                      </Badge>
+                      {student.company && <span className="text-sm font-medium">{student.company}</span>}
+                      <div className="text-xl font-bold text-primary min-w-[60px] text-right">{student.jriScore}%</div>
+                    </div>
+                  </div>
+                </Card>
+              )
+            })}
+          </div>
+        </div>
+
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>Student Details</DialogTitle>
+            </DialogHeader>
+            {selectedStudent && (
+              <StudentDrillDown student={selectedStudent} auditReport={generateMockAuditReport(selectedStudent)} />
+            )}
+          </DialogContent>
+        </Dialog>
+      </div>
+    </div>
+  )
+}
+
+
+File: 
+app/loading.tsx
+Content: 
+export default function Loading() {
+  return null
+}
+
+
+File: 
+app/page.tsx
+Content: 
+"use client"
+
+import { useEffect, useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Users, TrendingUp, GraduationCap, Building2, Search } from "lucide-react"
+import { Navigation } from "@/components/navigation"
+import { StudentDrillDown } from "@/components/student-drill-down"
+
+interface Student {
+  id: string
+  name: string
+  avatar?: string
+  department: string
+  year: string
+  jriScore: number
+  projectTitle?: string
+}
+
+interface AuditReport {
+  aiSummary: {
+    overview: string
+    keyStrengths: string[]
+    areasForImprovement: string[]
+  }
+  detailedBreakdown: Array<{
+    metric: string
+    score: number
+    summary: string
+  }>
+}
+
+export default function TPAdminDashboard() {
+  const [students, setStudents] = useState<Student[]>([])
+  const [searchTerm, setSearchTerm] = useState("")
+  const [mounted, setMounted] = useState(false)
+  const [selectedStudent, setSelectedStudent] = useState<Student | null>(null)
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+
+  useEffect(() => {
+    const fetchStudents = async () => {
+      try {
+        const response = await fetch("/api/students")
+        if (response.ok) {
+          const data = await response.json()
+          setStudents(data)
+        }
+      } catch (error) {
+        console.error("Failed to fetch students:", error)
+        setStudents([
+          {
+            id: "1",
+            name: "John Doe",
+            department: "Computer Science",
+            year: "4th Year",
+            jriScore: 92,
+            projectTitle: "AI-Powered Task Management System",
+          },
+          {
+            id: "2",
+            name: "Jane Smith",
+            department: "Electronics",
+            year: "3rd Year",
+            jriScore: 78,
+            projectTitle: "IoT Home Automation Platform",
+          },
+          {
+            id: "3",
+            name: "Mike Johnson",
+            department: "Mechanical",
+            year: "4th Year",
+            jriScore: 65,
+            projectTitle: "Automated Manufacturing Control System",
+          },
+          {
+            id: "4",
+            name: "Sarah Wilson",
+            department: "Information Technology",
+            year: "2nd Year",
+            jriScore: 88,
+            projectTitle: "E-commerce Analytics Dashboard",
+          },
+        ])
+      }
+    }
+
+    fetchStudents()
+    setMounted(true)
+  }, [])
+
+  const filteredStudents = students.filter(
+    (student) =>
+      student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      student.department.toLowerCase().includes(searchTerm.toLowerCase()),
+  )
+
+  const getJRIBadgeColor = (score: number) => {
+    if (score > 85) return "bg-green-100 text-green-800 hover:bg-green-100"
+    if (score >= 70) return "bg-yellow-100 text-yellow-800 hover:bg-yellow-100"
+    return "bg-red-100 text-red-800 hover:bg-red-100"
+  }
+
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
+  }
+
+  const handleStudentClick = (student: Student) => {
+    setSelectedStudent(student)
+    setIsDialogOpen(true)
+  }
+
+  const generateMockAuditReport = (student: Student): AuditReport => {
+    return {
+      aiSummary: {
+        overview: `${student.name}'s project demonstrates strong technical capabilities with well-structured code architecture and innovative problem-solving approaches. The implementation shows good understanding of modern development practices.`,
+        keyStrengths: [
+          "Clean and maintainable code structure",
+          "Effective use of design patterns",
+          "Strong problem-solving approach",
+          "Good documentation practices",
+          "Innovative feature implementation",
+        ],
+        areasForImprovement: [
+          "Error handling could be more comprehensive",
+          "Test coverage needs improvement",
+          "Performance optimization opportunities",
+          "Security considerations could be enhanced",
+        ],
+      },
+      detailedBreakdown: [
+        {
+          metric: "Code Quality",
+          score: student.jriScore > 85 ? 90 : student.jriScore > 70 ? 75 : 60,
+          summary: "Well-structured code with good naming conventions and organization",
+        },
+        {
+          metric: "Performance",
+          score: student.jriScore > 85 ? 85 : student.jriScore > 70 ? 70 : 55,
+          summary: "Application performs well under normal load conditions",
+        },
+        {
+          metric: "Security",
+          score: student.jriScore > 85 ? 80 : student.jriScore > 70 ? 65 : 50,
+          summary: "Basic security measures implemented, room for enhancement",
+        },
+        {
+          metric: "Innovation",
+          score: student.jriScore > 85 ? 95 : student.jriScore > 70 ? 80 : 65,
+          summary: "Creative approach to solving complex problems",
+        },
+        {
+          metric: "Documentation",
+          score: student.jriScore > 85 ? 88 : student.jriScore > 70 ? 72 : 58,
+          summary: "Good documentation with clear explanations and examples",
+        },
+      ],
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto p-6 space-y-8">
+        <Navigation mounted={mounted} />
+
+        <div className="space-y-2">
+          <h1 className="text-3xl font-bold">T&P Admin Dashboard</h1>
+          <p className="text-lg text-slate-500">Manage training and placement activities for all students</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Total Students</CardTitle>
+              <Users className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">1,234</div>
+              <p className="text-xs text-muted-foreground">+12% from last month</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Average JRI</CardTitle>
+              <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">78.5</div>
+              <p className="text-xs text-muted-foreground">+2.1% from last semester</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Placed Students</CardTitle>
+              <GraduationCap className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">892</div>
+              <p className="text-xs text-muted-foreground">72.3% placement rate</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Active Companies</CardTitle>
+              <Building2 className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">156</div>
+              <p className="text-xs text-muted-foreground">+8 new partnerships</p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Students Overview</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <div className="relative flex-1 max-w-sm">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                <Input
+                  placeholder="Search students..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
+            </div>
+
+            <div className="rounded-md border">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b bg-muted/50">
+                      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Name</th>
+                      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Department</th>
+                      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Year</th>
+                      <th className="h-12 px-4 text-right align-middle font-medium text-muted-foreground">JRI Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filteredStudents.map((student) => (
+                      <tr
+                        key={student.id}
+                        className="border-b transition-colors hover:bg-muted/50 cursor-pointer"
+                        onClick={() => handleStudentClick(student)}
+                      >
+                        <td className="p-4 align-middle">
+                          <div className="flex items-center space-x-3">
+                            <Avatar className="h-8 w-8">
+                              <AvatarImage src={student.avatar || "/placeholder.svg"} alt={student.name} />
+                              <AvatarFallback className="text-xs">{getInitials(student.name)}</AvatarFallback>
+                            </Avatar>
+                            <span className="font-medium">{student.name}</span>
+                          </div>
+                        </td>
+                        <td className="p-4 align-middle">
+                          <Badge variant="secondary">{student.department}</Badge>
+                        </td>
+                        <td className="p-4 align-middle">{student.year}</td>
+                        <td className="p-4 align-middle text-right">
+                          <Badge className={getJRIBadgeColor(student.jriScore)}>{student.jriScore}</Badge>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>Student Details</DialogTitle>
+            </DialogHeader>
+            {selectedStudent && (
+              <StudentDrillDown student={selectedStudent} auditReport={generateMockAuditReport(selectedStudent)} />
+            )}
+          </DialogContent>
+        </Dialog>
+      </div>
+    </div>
+  )
+}
+
+
+File: 
+components.json
+Content: 
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "iconLibrary": "lucide"
+}
+
+File: 
+eslint.config.mjs
+Content: 
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import { FlatCompat } from "@eslint/eslintrc";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+const eslintConfig = [
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    ignores: [
+      "node_modules/**",
+      ".next/**",
+      "out/**",
+      "build/**",
+      "next-env.d.ts",
+    ],
+  },
+];
+
+export default eslintConfig;
+
+
+File: 
+src/components/navigation.tsx
+Content: 
+"use client"
+
+import { useState } from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { useTheme } from "next-themes"
+import { Home, Trophy, Target, Users, Moon, Sun, Menu, X } from "lucide-react"
+
+const navigation = [
+  { name: "Dashboard", href: "/", icon: Home },
+  { name: "Leaderboards", href: "/leaderboards", icon: Trophy },
+  { name: "Challenges", href: "/challenges", icon: Target },
+  { name: "Community Feed", href: "/community", icon: Users },
+]
+
+interface NavigationProps {
+  mounted: boolean
+}
+
+export function Navigation({ mounted }: NavigationProps) {
+  const pathname = usePathname()
+  const { theme, setTheme } = useTheme()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  return (
+    <>
+      {/* Desktop Navigation */}
+      <nav className="hidden md:flex items-center justify-between w-full mb-8">
+        <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-1">
+            {navigation.map((item) => {
+              const Icon = item.icon
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                    pathname === item.href
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted",
+                  )}
+                >
+                  <Icon className="h-4 w-4" />
+                  <span>{item.name}</span>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+
+        {mounted && (
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="shrink-0"
+          >
+            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+        )}
+      </nav>
+
+      {/* Mobile Navigation */}
+      <nav className="md:hidden mb-8">
+        <div className="flex items-center justify-between">
+          <Button variant="outline" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </Button>
+
+          {mounted && (
+            <Button variant="outline" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          )}
+        </div>
+
+        {mobileMenuOpen && (
+          <div className="mt-4 space-y-2">
+            {navigation.map((item) => {
+              const Icon = item.icon
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={cn(
+                    "flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors w-full",
+                    pathname === item.href
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted",
+                  )}
+                >
+                  <Icon className="h-4 w-4" />
+                  <span>{item.name}</span>
+                </Link>
+              )
+            })}
+          </div>
+        )}
+      </nav>
+    </>
+  )
+}
+
+
+File: 
+src/components/student-drill-down.tsx
+Content: 
+"use client"
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+// Update the import path if the Tabs components are located elsewhere, for example:
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+// Or, if you need to create the file, add the Tabs components to src/components/ui/tabs.tsx
+import { Progress } from "@/components/ui/progress"
+import { Separator } from "@/components/ui/separator"
+import { DialogTitle } from "@/components/ui/dialog"
+import { CheckCircle, AlertTriangle, Code, Star, BookOpen, Users } from "lucide-react"
+
+interface Student {
+  id: string
+  name: string
+  avatar?: string
+  department: string
+  year: string
+  jriScore: number
+  projectTitle?: string
+}
+
+interface AuditReport {
+  aiSummary: {
+    overview: string
+    keyStrengths: string[]
+    areasForImprovement: string[]
+  }
+  detailedBreakdown: Array<{
+    metric: string
+    score: number
+    summary: string
+  }>
+}
+
+interface StudentDrillDownProps {
+  student: Student
+  auditReport: AuditReport
+}
+
+export function StudentDrillDown({ student, auditReport }: StudentDrillDownProps) {
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
+  }
+
+  const getScoreBadgeColor = (score: number) => {
+    if (score > 85) return "bg-green-100 text-green-800 hover:bg-green-100"
+    if (score >= 70) return "bg-yellow-100 text-yellow-800 hover:bg-yellow-100"
+    return "bg-red-100 text-red-800 hover:bg-red-100"
+  }
+
+  const defaultAuditReport = {
+    aiSummary: {
+      overview: "AI audit report is being generated for this student's project.",
+      keyStrengths: ["Strong technical foundation", "Good problem-solving approach"],
+      areasForImprovement: ["Code documentation", "Test coverage"],
+    },
+    detailedBreakdown: [
+      { metric: "Code Quality", score: 85, summary: "Well-structured and readable code" },
+      { metric: "Performance", score: 78, summary: "Good optimization practices" },
+      { metric: "Documentation", score: 70, summary: "Basic documentation present" },
+    ],
+  }
+
+  const safeAuditReport = auditReport || defaultAuditReport
+
+  return (
+    <div className="space-y-8 p-6">
+      <div className="flex items-start space-x-6">
+        <Avatar className="h-24 w-24 ring-2 ring-primary/20">
+          <AvatarImage src={student.avatar || "/placeholder.svg"} alt={student.name} />
+          <AvatarFallback className="text-2xl font-bold bg-gradient-to-br from-blue-500 to-purple-600 text-white">
+            {getInitials(student.name)}
+          </AvatarFallback>
+        </Avatar>
+        <div className="flex-1 space-y-2">
+          <DialogTitle className="text-3xl font-bold tracking-tight">{student.name}</DialogTitle>
+          <p className="text-lg text-muted-foreground">
+            {student.department} • {student.year}
+          </p>
+        </div>
+      </div>
+
+      <Tabs defaultValue="overview" className="w-full">
+        <TabsList className="grid w-full grid-cols-4 h-12 p-1 bg-muted/50 rounded-lg">
+          <TabsTrigger
+            value="overview"
+            className="text-sm font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all"
+          >
+            Overview
+          </TabsTrigger>
+          <TabsTrigger
+            value="projects"
+            className="text-sm font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all"
+          >
+            Projects
+          </TabsTrigger>
+          <TabsTrigger
+            value="dsa"
+            className="text-sm font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all"
+          >
+            DSA
+          </TabsTrigger>
+          <TabsTrigger
+            value="academics"
+            className="text-sm font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all"
+          >
+            Academics
+          </TabsTrigger>
+        </TabsList>
+
+        <div className="mt-8">
+          <TabsContent value="overview" className="space-y-8 mt-0">
+            <div className="text-center space-y-4 p-8 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-950/30 dark:via-indigo-950/30 dark:to-purple-950/30 rounded-xl">
+              <div className="text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                {student.jriScore}
+              </div>
+              <p className="text-xl text-muted-foreground font-medium">Overall JRI Score</p>
+            </div>
+
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold">JRI Components Breakdown</h3>
+              <div className="grid gap-6">
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Project Score</span>
+                    <Badge variant="outline" className="font-semibold">
+                      85/100
+                    </Badge>
+                  </div>
+                  <Progress value={85} className="h-3" />
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">DSA Score</span>
+                    <Badge variant="outline" className="font-semibold">
+                      78/100
+                    </Badge>
+                  </div>
+                  <Progress value={78} className="h-3" />
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Academics</span>
+                    <Badge variant="outline" className="font-semibold">
+                      92/100
+                    </Badge>
+                  </div>
+                  <Progress value={92} className="h-3" />
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Soft Skills</span>
+                    <Badge variant="outline" className="font-semibold">
+                      88/100
+                    </Badge>
+                  </div>
+                  <Progress value={88} className="h-3" />
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+
+          {/* Projects Tab - Full AI Audit Report */}
+          <TabsContent value="projects" className="space-y-8 mt-0">
+            <div className="p-6 bg-muted/30 rounded-lg border-l-4 border-blue-500">
+              <p className="text-muted-foreground leading-relaxed text-lg">{safeAuditReport.aiSummary?.overview}</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="border-green-200 dark:border-green-800">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-lg text-green-700 dark:text-green-400 flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5" />
+                    Key Strengths
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-4">
+                    {safeAuditReport.aiSummary?.keyStrengths?.map((strength, index) => (
+                      <li key={index} className="flex items-start space-x-3">
+                        <div className="h-2 w-2 bg-green-500 rounded-full mt-2 flex-shrink-0" />
+                        <span className="leading-relaxed">{strength}</span>
+                      </li>
+                    )) || []}
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-yellow-200 dark:border-yellow-800">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-lg text-yellow-700 dark:text-yellow-400 flex items-center gap-2">
+                    <AlertTriangle className="h-5 w-5" />
+                    Areas for Improvement
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-4">
+                    {safeAuditReport.aiSummary?.areasForImprovement?.map((improvement, index) => (
+                      <li key={index} className="flex items-start space-x-3">
+                        <div className="h-2 w-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0" />
+                        <span className="leading-relaxed">{improvement}</span>
+                      </li>
+                    )) || []}
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold">Detailed Metrics</h3>
+              <div className="grid gap-4">
+                {safeAuditReport.detailedBreakdown?.map((metric, index) => (
+                  <Card key={index} className="p-6 border-l-4 border-blue-500">
+                    <div className="flex items-center justify-between mb-3">
+                      <h5 className="font-semibold text-lg">{metric.metric}</h5>
+                      <Badge className={`${getScoreBadgeColor(metric.score)} font-semibold text-sm`}>
+                        {metric.score}/100
+                      </Badge>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">{metric.summary}</p>
+                  </Card>
+                )) || []}
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="dsa" className="mt-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <Card className="p-5 h-full">
+                <CardHeader className="pb-3">
+                  <CardTitle className="flex items-center gap-2 text-lg font-semibold">
+                    <Code className="h-5 w-5 text-orange-500" />
+                    LeetCode
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium">Problems Solved</span>
+                      <span className="text-xl font-bold text-orange-500">247</span>
+                    </div>
+                    <div className="text-xs text-muted-foreground">Easy: 89 • Medium: 132 • Hard: 26</div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium">Contest Rating</span>
+                      <span className="text-xl font-bold text-orange-500">1,847</span>
+                    </div>
+                    <div className="text-xs text-muted-foreground">Max Rating: 1,923</div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="p-5 h-full">
+                <CardHeader className="pb-3">
+                  <CardTitle className="flex items-center gap-2 text-lg font-semibold">
+                    <Star className="h-5 w-5 text-green-500" />
+                    HackerRank
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium">Stars</span>
+                      <div className="flex items-center space-x-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium">Badges Earned</span>
+                      <span className="text-xl font-bold text-green-500">12</span>
+                    </div>
+                    <div className="text-xs text-muted-foreground">Gold: 4 • Silver: 5 • Bronze: 3</div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="academics" className="space-y-8 mt-0">
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold flex items-center gap-2">
+                <BookOpen className="h-6 w-6 text-blue-500" />
+                Academic Performance
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">CGPA</span>
+                    <span className="text-xl font-bold">8.7/10</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Semester Rank</span>
+                    <span className="text-xl font-bold">12/120</span>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Attendance</span>
+                    <span className="text-xl font-bold">94%</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Assignments</span>
+                    <span className="text-xl font-bold">28/30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Separator className="my-8" />
+
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold flex items-center gap-2">
+                <Users className="h-6 w-6 text-green-500" />
+                Community Engagement
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Peer Reviews Given</span>
+                    <span className="text-xl font-bold">23</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Hackathons Participated</span>
+                    <span className="text-xl font-bold">7</span>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Study Groups Led</span>
+                    <span className="text-xl font-bold">4</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Mentoring Hours</span>
+                    <span className="text-xl font-bold">45</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+        </div>
+      </Tabs>
+    </div>
+  )
+}
+
+
+File: 
+src/components/theme-provider.tsx
+Content: 
+"use client"
+
+import * as React from "react"
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+import type { ThemeProviderProps } from "next-themes"
+
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+}
+
+
+File: 
+src/components/ui/avatar.tsx
+Content: 
+"use client"
+
+import * as React from "react"
+import * as AvatarPrimitive from "@radix-ui/react-avatar"
+
+import { cn } from "@/lib/utils"
+
+function Avatar({
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Root>) {
+  return (
+    <AvatarPrimitive.Root
+      data-slot="avatar"
+      className={cn(
+        "relative flex size-8 shrink-0 overflow-hidden rounded-full",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function AvatarImage({
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Image>) {
+  return (
+    <AvatarPrimitive.Image
+      data-slot="avatar-image"
+      className={cn("aspect-square size-full", className)}
+      {...props}
+    />
+  )
+}
+
+function AvatarFallback({
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {
+  return (
+    <AvatarPrimitive.Fallback
+      data-slot="avatar-fallback"
+      className={cn(
+        "bg-muted flex size-full items-center justify-center rounded-full",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Avatar, AvatarImage, AvatarFallback }
+
+
+File: 
+src/components/ui/badge.tsx
+Content: 
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const badgeVariants = cva(
+  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
+  {
+    variants: {
+      variant: {
+        default:
+          "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
+        secondary:
+          "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
+        destructive:
+          "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+        outline:
+          "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+)
+
+function Badge({
+  className,
+  variant,
+  asChild = false,
+  ...props
+}: React.ComponentProps<"span"> &
+  VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
+  const Comp = asChild ? Slot : "span"
+
+  return (
+    <Comp
+      data-slot="badge"
+      className={cn(badgeVariants({ variant }), className)}
+      {...props}
+    />
+  )
+}
+
+export { Badge, badgeVariants }
+
+
+File: 
+src/components/ui/button.tsx
+Content: 
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  {
+    variants: {
+      variant: {
+        default:
+          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+        outline:
+          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+        secondary:
+          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        icon: "size-9",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ...props
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean
+  }) {
+  const Comp = asChild ? Slot : "button"
+
+  return (
+    <Comp
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  )
+}
+
+export { Button, buttonVariants }
+
+
+File: 
+src/components/ui/card.tsx
+Content: 
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+function Card({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card"
+      className={cn(
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-header"
+      className={cn(
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-title"
+      className={cn("leading-none font-semibold", className)}
+      {...props}
+    />
+  )
+}
+
+function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-description"
+      className={cn("text-muted-foreground text-sm", className)}
+      {...props}
+    />
+  )
+}
+
+function CardAction({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-action"
+      className={cn(
+        "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function CardContent({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-content"
+      className={cn("px-6", className)}
+      {...props}
+    />
+  )
+}
+
+function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-footer"
+      className={cn("flex items-center px-6 [.border-t]:pt-6", className)}
+      {...props}
+    />
+  )
+}
+
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardContent,
+}
+
+
+File: 
+src/components/ui/dialog.tsx
+Content: 
+"use client"
+
+import * as React from "react"
+import * as DialogPrimitive from "@radix-ui/react-dialog"
+import { XIcon } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+function Dialog({
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Root>) {
+  return <DialogPrimitive.Root data-slot="dialog" {...props} />
+}
+
+function DialogTrigger({
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Trigger>) {
+  return <DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />
+}
+
+function DialogPortal({
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Portal>) {
+  return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />
+}
+
+function DialogClose({
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Close>) {
+  return <DialogPrimitive.Close data-slot="dialog-close" {...props} />
+}
+
+function DialogOverlay({
+  className,
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Overlay>) {
+  return (
+    <DialogPrimitive.Overlay
+      data-slot="dialog-overlay"
+      className={cn(
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function DialogContent({
+  className,
+  children,
+  showCloseButton = true,
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Content> & {
+  showCloseButton?: boolean
+}) {
+  return (
+    <DialogPortal data-slot="dialog-portal">
+      <DialogOverlay />
+      <DialogPrimitive.Content
+        data-slot="dialog-content"
+        className={cn(
+          "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg",
+          className
+        )}
+        {...props}
+      >
+        {children}
+        {showCloseButton && (
+          <DialogPrimitive.Close
+            data-slot="dialog-close"
+            className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+          >
+            <XIcon />
+            <span className="sr-only">Close</span>
+          </DialogPrimitive.Close>
+        )}
+      </DialogPrimitive.Content>
+    </DialogPortal>
+  )
+}
+
+function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="dialog-header"
+      className={cn("flex flex-col gap-2 text-center sm:text-left", className)}
+      {...props}
+    />
+  )
+}
+
+function DialogFooter({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="dialog-footer"
+      className={cn(
+        "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function DialogTitle({
+  className,
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Title>) {
+  return (
+    <DialogPrimitive.Title
+      data-slot="dialog-title"
+      className={cn("text-lg leading-none font-semibold", className)}
+      {...props}
+    />
+  )
+}
+
+function DialogDescription({
+  className,
+  ...props
+}: React.ComponentProps<typeof DialogPrimitive.Description>) {
+  return (
+    <DialogPrimitive.Description
+      data-slot="dialog-description"
+      className={cn("text-muted-foreground text-sm", className)}
+      {...props}
+    />
+  )
+}
+
+export {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
+}
+
+
+File: 
+src/components/ui/input.tsx
+Content: 
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+function Input({ className, type, ...props }: React.ComponentProps<"input">) {
+  return (
+    <input
+      type={type}
+      data-slot="input"
+      className={cn(
+        "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+        "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Input }
+
+
+File: 
+src/components/ui/progress.tsx
+Content: 
+"use client"
+
+import * as React from "react"
+import * as ProgressPrimitive from "@radix-ui/react-progress"
+
+import { cn } from "@/lib/utils"
+
+function Progress({
+  className,
+  value,
+  ...props
+}: React.ComponentProps<typeof ProgressPrimitive.Root>) {
+  return (
+    <ProgressPrimitive.Root
+      data-slot="progress"
+      className={cn(
+        "bg-primary/20 relative h-2 w-full overflow-hidden rounded-full",
+        className
+      )}
+      {...props}
+    >
+      <ProgressPrimitive.Indicator
+        data-slot="progress-indicator"
+        className="bg-primary h-full w-full flex-1 transition-all"
+        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+      />
+    </ProgressPrimitive.Root>
+  )
+}
+
+export { Progress }
+
+
+File: 
+src/components/ui/select.tsx
+Content: 
+"use client"
+
+import * as React from "react"
+import * as SelectPrimitive from "@radix-ui/react-select"
+import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+function Select({
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Root>) {
+  return <SelectPrimitive.Root data-slot="select" {...props} />
+}
+
+function SelectGroup({
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Group>) {
+  return <SelectPrimitive.Group data-slot="select-group" {...props} />
+}
+
+function SelectValue({
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Value>) {
+  return <SelectPrimitive.Value data-slot="select-value" {...props} />
+}
+
+function SelectTrigger({
+  className,
+  size = "default",
+  children,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Trigger> & {
+  size?: "sm" | "default"
+}) {
+  return (
+    <SelectPrimitive.Trigger
+      data-slot="select-trigger"
+      data-size={size}
+      className={cn(
+        "border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-fit items-center justify-between gap-2 rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <SelectPrimitive.Icon asChild>
+        <ChevronDownIcon className="size-4 opacity-50" />
+      </SelectPrimitive.Icon>
+    </SelectPrimitive.Trigger>
+  )
+}
+
+function SelectContent({
+  className,
+  children,
+  position = "popper",
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Content>) {
+  return (
+    <SelectPrimitive.Portal>
+      <SelectPrimitive.Content
+        data-slot="select-content"
+        className={cn(
+          "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-(--radix-select-content-available-height) min-w-[8rem] origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border shadow-md",
+          position === "popper" &&
+            "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
+          className
+        )}
+        position={position}
+        {...props}
+      >
+        <SelectScrollUpButton />
+        <SelectPrimitive.Viewport
+          className={cn(
+            "p-1",
+            position === "popper" &&
+              "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)] scroll-my-1"
+          )}
+        >
+          {children}
+        </SelectPrimitive.Viewport>
+        <SelectScrollDownButton />
+      </SelectPrimitive.Content>
+    </SelectPrimitive.Portal>
+  )
+}
+
+function SelectLabel({
+  className,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Label>) {
+  return (
+    <SelectPrimitive.Label
+      data-slot="select-label"
+      className={cn("text-muted-foreground px-2 py-1.5 text-xs", className)}
+      {...props}
+    />
+  )
+}
+
+function SelectItem({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Item>) {
+  return (
+    <SelectPrimitive.Item
+      data-slot="select-item"
+      className={cn(
+        "focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
+        className
+      )}
+      {...props}
+    >
+      <span className="absolute right-2 flex size-3.5 items-center justify-center">
+        <SelectPrimitive.ItemIndicator>
+          <CheckIcon className="size-4" />
+        </SelectPrimitive.ItemIndicator>
+      </span>
+      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+    </SelectPrimitive.Item>
+  )
+}
+
+function SelectSeparator({
+  className,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Separator>) {
+  return (
+    <SelectPrimitive.Separator
+      data-slot="select-separator"
+      className={cn("bg-border pointer-events-none -mx-1 my-1 h-px", className)}
+      {...props}
+    />
+  )
+}
+
+function SelectScrollUpButton({
+  className,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.ScrollUpButton>) {
+  return (
+    <SelectPrimitive.ScrollUpButton
+      data-slot="select-scroll-up-button"
+      className={cn(
+        "flex cursor-default items-center justify-center py-1",
+        className
+      )}
+      {...props}
+    >
+      <ChevronUpIcon className="size-4" />
+    </SelectPrimitive.ScrollUpButton>
+  )
+}
+
+function SelectScrollDownButton({
+  className,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.ScrollDownButton>) {
+  return (
+    <SelectPrimitive.ScrollDownButton
+      data-slot="select-scroll-down-button"
+      className={cn(
+        "flex cursor-default items-center justify-center py-1",
+        className
+      )}
+      {...props}
+    >
+      <ChevronDownIcon className="size-4" />
+    </SelectPrimitive.ScrollDownButton>
+  )
+}
+
+export {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+}
+
+
+File: 
+src/components/ui/separator.tsx
+Content: 
+"use client"
+
+import * as React from "react"
+import * as SeparatorPrimitive from "@radix-ui/react-separator"
+
+import { cn } from "@/lib/utils"
+
+function Separator({
+  className,
+  orientation = "horizontal",
+  decorative = true,
+  ...props
+}: React.ComponentProps<typeof SeparatorPrimitive.Root>) {
+  return (
+    <SeparatorPrimitive.Root
+      data-slot="separator"
+      decorative={decorative}
+      orientation={orientation}
+      className={cn(
+        "bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Separator }
+
+
+File: 
+src/components/ui/tabs.tsx
+Content: 
+// src/components/ui/tabs.tsx
+"use client"
+
+import * as React from "react"
+import * as TabsPrimitive from "@radix-ui/react-tabs"
+import { cn } from "@/lib/utils"
+
+const Tabs = TabsPrimitive.Root
+
+const TabsList = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.List>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.List
+    ref={ref}
+    className={cn(
+      "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
+      className
+    )}
+    {...props}
+  />
+))
+TabsList.displayName = TabsPrimitive.List.displayName
+
+const TabsTrigger = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm",
+      className
+    )}
+    {...props}
+  />
+))
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
+
+const TabsContent = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.Content
+    ref={ref}
+    className={cn(
+      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      className
+    )}
+    {...props}
+  />
+))
+TabsContent.displayName = TabsPrimitive.Content.displayName
+
+export { Tabs, TabsList, TabsTrigger, TabsContent }
+
+
+File: 
+src/components/ui/textarea.tsx
+Content: 
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
+  return (
+    <textarea
+      data-slot="textarea"
+      className={cn(
+        "border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Textarea }
+
+
+File: 
+src/lib/utils.ts
+Content: 
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
+
+File: 
+src/pages.tsx
+Content: 
+"use client"
+
+import { useEffect, useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Users, TrendingUp, GraduationCap, Building2, Search } from "lucide-react"
+import { Navigation } from "@/components/navigation"
+import { StudentDrillDown } from "@/components/student-drill-down"
+
+interface Student {
+  id: string
+  name: string
+  avatar?: string
+  department: string
+  year: string
+  jriScore: number
+  projectTitle?: string
+}
+
+interface AuditReport {
+  aiSummary: {
+    overview: string
+    keyStrengths: string[]
+    areasForImprovement: string[]
+  }
+  detailedBreakdown: Array<{
+    metric: string
+    score: number
+    summary: string
+  }>
+}
+
+export default function TPAdminDashboard() {
+  const [students, setStudents] = useState<Student[]>([])
+  const [searchTerm, setSearchTerm] = useState("")
+  const [mounted, setMounted] = useState(false)
+  const [selectedStudent, setSelectedStudent] = useState<Student | null>(null)
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+
+  useEffect(() => {
+    const fetchStudents = async () => {
+      try {
+        const response = await fetch("/api/students")
+        if (response.ok) {
+          const data = await response.json()
+          setStudents(data)
+        }
+      } catch (error) {
+        console.error("Failed to fetch students:", error)
+        setStudents([
+          {
+            id: "1",
+            name: "John Doe",
+            department: "Computer Science",
+            year: "4th Year",
+            jriScore: 92,
+            projectTitle: "AI-Powered Task Management System",
+          },
+          {
+            id: "2",
+            name: "Jane Smith",
+            department: "Electronics",
+            year: "3rd Year",
+            jriScore: 78,
+            projectTitle: "IoT Home Automation Platform",
+          },
+          {
+            id: "3",
+            name: "Mike Johnson",
+            department: "Mechanical",
+            year: "4th Year",
+            jriScore: 65,
+            projectTitle: "Automated Manufacturing Control System",
+          },
+          {
+            id: "4",
+            name: "Sarah Wilson",
+            department: "Information Technology",
+            year: "2nd Year",
+            jriScore: 88,
+            projectTitle: "E-commerce Analytics Dashboard",
+          },
+        ])
+      }
+    }
+
+    fetchStudents()
+    setMounted(true)
+  }, [])
+
+  const filteredStudents = students.filter(
+    (student) =>
+      student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      student.department.toLowerCase().includes(searchTerm.toLowerCase()),
+  )
+
+  const getJRIBadgeColor = (score: number) => {
+    if (score > 85) return "bg-green-100 text-green-800 hover:bg-green-100"
+    if (score >= 70) return "bg-yellow-100 text-yellow-800 hover:bg-yellow-100"
+    return "bg-red-100 text-red-800 hover:bg-red-100"
+  }
+
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
+  }
+
+  const handleStudentClick = (student: Student) => {
+    setSelectedStudent(student)
+    setIsDialogOpen(true)
+  }
+
+  const generateMockAuditReport = (student: Student): AuditReport => {
+    return {
+      aiSummary: {
+        overview: `${student.name}'s project demonstrates strong technical capabilities with well-structured code architecture and innovative problem-solving approaches. The implementation shows good understanding of modern development practices.`,
+        keyStrengths: [
+          "Clean and maintainable code structure",
+          "Effective use of design patterns",
+          "Strong problem-solving approach",
+          "Good documentation practices",
+          "Innovative feature implementation",
+        ],
+        areasForImprovement: [
+          "Error handling could be more comprehensive",
+          "Test coverage needs improvement",
+          "Performance optimization opportunities",
+          "Security considerations could be enhanced",
+        ],
+      },
+      detailedBreakdown: [
+        {
+          metric: "Code Quality",
+          score: student.jriScore > 85 ? 90 : student.jriScore > 70 ? 75 : 60,
+          summary: "Well-structured code with good naming conventions and organization",
+        },
+        {
+          metric: "Performance",
+          score: student.jriScore > 85 ? 85 : student.jriScore > 70 ? 70 : 55,
+          summary: "Application performs well under normal load conditions",
+        },
+        {
+          metric: "Security",
+          score: student.jriScore > 85 ? 80 : student.jriScore > 70 ? 65 : 50,
+          summary: "Basic security measures implemented, room for enhancement",
+        },
+        {
+          metric: "Innovation",
+          score: student.jriScore > 85 ? 95 : student.jriScore > 70 ? 80 : 65,
+          summary: "Creative approach to solving complex problems",
+        },
+        {
+          metric: "Documentation",
+          score: student.jriScore > 85 ? 88 : student.jriScore > 70 ? 72 : 58,
+          summary: "Good documentation with clear explanations and examples",
+        },
+      ],
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto p-6 space-y-8">
+        <Navigation mounted={mounted} />
+
+        <div className="space-y-2">
+          <h1 className="text-3xl font-bold">T&P Admin Dashboard</h1>
+          <p className="text-lg text-slate-500">Manage training and placement activities for all students</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Total Students</CardTitle>
+              <Users className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">1,234</div>
+              <p className="text-xs text-muted-foreground">+12% from last month</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Average JRI</CardTitle>
+              <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">78.5</div>
+              <p className="text-xs text-muted-foreground">+2.1% from last semester</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Placed Students</CardTitle>
+              <GraduationCap className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">892</div>
+              <p className="text-xs text-muted-foreground">72.3% placement rate</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Active Companies</CardTitle>
+              <Building2 className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">156</div>
+              <p className="text-xs text-muted-foreground">+8 new partnerships</p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Students Overview</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <div className="relative flex-1 max-w-sm">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                <Input
+                  placeholder="Search students..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
+            </div>
+
+            <div className="rounded-md border">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b bg-muted/50">
+                      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Name</th>
+                      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Department</th>
+                      <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Year</th>
+                      <th className="h-12 px-4 text-right align-middle font-medium text-muted-foreground">JRI Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filteredStudents.map((student) => (
+                      <tr
+                        key={student.id}
+                        className="border-b transition-colors hover:bg-muted/50 cursor-pointer"
+                        onClick={() => handleStudentClick(student)}
+                      >
+                        <td className="p-4 align-middle">
+                          <div className="flex items-center space-x-3">
+                            <Avatar className="h-8 w-8">
+                              <AvatarImage src={student.avatar || "/placeholder.svg"} alt={student.name} />
+                              <AvatarFallback className="text-xs">{getInitials(student.name)}</AvatarFallback>
+                            </Avatar>
+                            <span className="font-medium">{student.name}</span>
+                          </div>
+                        </td>
+                        <td className="p-4 align-middle">
+                          <Badge variant="secondary">{student.department}</Badge>
+                        </td>
+                        <td className="p-4 align-middle">{student.year}</td>
+                        <td className="p-4 align-middle text-right">
+                          <Badge className={getJRIBadgeColor(student.jriScore)}>{student.jriScore}</Badge>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>Student Details</DialogTitle>
+            </DialogHeader>
+            {selectedStudent && (
+              <StudentDrillDown student={selectedStudent} auditReport={generateMockAuditReport(selectedStudent)} />
+            )}
+          </DialogContent>
+        </Dialog>
+      </div>
+    </div>
+  )
+}
+
+
