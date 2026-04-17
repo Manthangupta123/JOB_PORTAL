@@ -6,7 +6,10 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Users, TrendingUp, GraduationCap, Building2, Search } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Textarea } from "@/components/ui/textarea"
+import { Users, TrendingUp, GraduationCap, Building2, Search, Plus } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { StudentDrillDown } from "@/components/student-drill-down"
 
@@ -15,7 +18,7 @@ interface Student {
   name: string
   avatar?: string
   department: string
-  year: string
+  year: number
   jriScore: number
   projectTitle?: string
 }
@@ -39,6 +42,16 @@ export default function TPAdminDashboard() {
   const [mounted, setMounted] = useState(false)
   const [selectedStudent, setSelectedStudent] = useState<Student | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const [isAddDialogOpen, setIsAddDialogOpen] = useState(false)
+  const [newStudent, setNewStudent] = useState({
+    name: "",
+    email: "",
+    department: "",
+    year: 1,
+    avatarUrl: "",
+    githubUrl: "",
+    projectTitle: "",
+  })
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -114,6 +127,37 @@ export default function TPAdminDashboard() {
   const handleStudentClick = (student: Student) => {
     setSelectedStudent(student)
     setIsDialogOpen(true)
+  }
+
+  const handleAddStudent = async () => {
+    try {
+      const response = await fetch("/api/students", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newStudent),
+      })
+
+      if (response.ok) {
+        const addedStudent = await response.json()
+        setStudents([...students, addedStudent])
+        setIsAddDialogOpen(false)
+        setNewStudent({
+          name: "",
+          email: "",
+          department: "",
+          year: 1,
+          avatarUrl: "",
+          githubUrl: "",
+          projectTitle: "",
+        })
+      } else {
+        console.error("Failed to add student")
+      }
+    } catch (error) {
+      console.error("Error adding student:", error)
+    }
   }
 
   const generateMockAuditReport = (student: Student): AuditReport => {
@@ -235,6 +279,10 @@ export default function TPAdminDashboard() {
                   className="pl-10"
                 />
               </div>
+              <Button onClick={() => setIsAddDialogOpen(true)} className="flex items-center space-x-2">
+                <Plus className="h-4 w-4" />
+                <span>Add Student</span>
+              </Button>
             </div>
 
             <div className="rounded-md border">
@@ -288,6 +336,94 @@ export default function TPAdminDashboard() {
             {selectedStudent && (
               <StudentDrillDown student={selectedStudent} auditReport={generateMockAuditReport(selectedStudent)} />
             )}
+          </DialogContent>
+        </Dialog>
+
+        <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
+          <DialogContent className="max-w-md">
+            <DialogHeader>
+              <DialogTitle>Add New Student</DialogTitle>
+            </DialogHeader>
+            <div className="space-y-4">
+              <div>
+                <label className="text-sm font-medium">Name</label>
+                <Input
+                  value={newStudent.name}
+                  onChange={(e) => setNewStudent({ ...newStudent, name: e.target.value })}
+                  placeholder="Enter student name"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium">Email</label>
+                <Input
+                  type="email"
+                  value={newStudent.email}
+                  onChange={(e) => setNewStudent({ ...newStudent, email: e.target.value })}
+                  placeholder="Enter email address"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium">Department</label>
+                <Select value={newStudent.department} onValueChange={(value) => setNewStudent({ ...newStudent, department: value })}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select department" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="CSE">Computer Science</SelectItem>
+                    <SelectItem value="IT">Information Technology</SelectItem>
+                    <SelectItem value="ECE">Electronics</SelectItem>
+                    <SelectItem value="ME">Mechanical</SelectItem>
+                    <SelectItem value="CE">Civil</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <label className="text-sm font-medium">Year</label>
+                <Select value={newStudent.year.toString()} onValueChange={(value) => setNewStudent({ ...newStudent, year: parseInt(value) })}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select year" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="1">1st Year</SelectItem>
+                    <SelectItem value="2">2nd Year</SelectItem>
+                    <SelectItem value="3">3rd Year</SelectItem>
+                    <SelectItem value="4">4th Year</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <label className="text-sm font-medium">LeetCode Profile (optional)</label>
+                <Input
+                  value={newStudent.avatarUrl}
+                  onChange={(e) => setNewStudent({ ...newStudent, avatarUrl: e.target.value })}
+                  placeholder="Enter LeetCode profile URL"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium">GitHub URL (optional)</label>
+                <Input
+                  value={newStudent.githubUrl}
+                  onChange={(e) => setNewStudent({ ...newStudent, githubUrl: e.target.value })}
+                  placeholder="Enter GitHub repository URL"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium">Project Title (optional)</label>
+                <Textarea
+                  value={newStudent.projectTitle}
+                  onChange={(e) => setNewStudent({ ...newStudent, projectTitle: e.target.value })}
+                  placeholder="Enter project title"
+                />
+              </div>
+              <div className="flex justify-end space-x-2">
+                <Button variant="outline" onClick={() => setIsAddDialogOpen(false)}>
+                  Cancel
+                </Button>
+                <Button onClick={handleAddStudent} disabled={!newStudent.name || !newStudent.email || !newStudent.department || !newStudent.year}>
+                  Add Student
+                </Button>
+              </div>
+            </div>
           </DialogContent>
         </Dialog>
       </div>

@@ -20,8 +20,15 @@
       "performance": 8.9,
       "aiUsage": "High - GPT-4 for recommendation engine",
       "plagiarismRisk": "Low",
-      "keyStrengths": ["Excellent architecture", "Novel ML approach", "Strong user experience"],
-      "areasForImprovement": ["Test coverage", "API documentation"]
+      "keyStrengths": [
+        "Excellent architecture",
+        "Novel ML approach",
+        "Strong user experience"
+      ],
+      "areasForImprovement": [
+        "Test coverage",
+        "API documentation"
+      ]
     }
   },
   {
@@ -39,14 +46,20 @@
     "aiAuditSummary": {
       "codeQuality": 9.1,
       "innovation": 9.5,
-      "documentation": 9.0,
+      "documentation": 9,
       "testCoverage": 8.7,
       "securityScore": 9.2,
       "performance": 8.8,
       "aiUsage": "Medium - Claude for data analysis insights",
       "plagiarismRisk": "Very Low",
-      "keyStrengths": ["Outstanding documentation", "Innovative approach", "Robust testing"],
-      "areasForImprovement": ["Performance optimization"]
+      "keyStrengths": [
+        "Outstanding documentation",
+        "Innovative approach",
+        "Robust testing"
+      ],
+      "areasForImprovement": [
+        "Performance optimization"
+      ]
     }
   },
   {
@@ -70,8 +83,15 @@
       "performance": 7.6,
       "aiUsage": "Low - ChatGPT for code comments",
       "plagiarismRisk": "Medium",
-      "keyStrengths": ["Good documentation", "Clean code structure"],
-      "areasForImprovement": ["Innovation", "Security practices", "Originality concerns"]
+      "keyStrengths": [
+        "Good documentation",
+        "Clean code structure"
+      ],
+      "areasForImprovement": [
+        "Innovation",
+        "Security practices",
+        "Originality concerns"
+      ]
     }
   },
   {
@@ -91,12 +111,19 @@
       "innovation": 9.3,
       "documentation": 8.5,
       "testCoverage": 8.8,
-      "securityScore": 9.0,
+      "securityScore": 9,
       "performance": 8.4,
       "aiUsage": "Medium - GPT-4 for impact analysis algorithms",
       "plagiarismRisk": "Low",
-      "keyStrengths": ["Highly innovative", "Social relevance", "Excellent testing"],
-      "areasForImprovement": ["Performance optimization", "UI polish"]
+      "keyStrengths": [
+        "Highly innovative",
+        "Social relevance",
+        "Excellent testing"
+      ],
+      "areasForImprovement": [
+        "Performance optimization",
+        "UI polish"
+      ]
     }
   },
   {
@@ -117,11 +144,18 @@
       "documentation": 7.8,
       "testCoverage": 8.2,
       "securityScore": 9.1,
-      "performance": 8.0,
+      "performance": 8,
       "aiUsage": "High - Multiple AI tools for smart contracts",
       "plagiarismRisk": "Low",
-      "keyStrengths": ["Strong security", "Blockchain implementation", "Good architecture"],
-      "areasForImprovement": ["Documentation", "Performance under load"]
+      "keyStrengths": [
+        "Strong security",
+        "Blockchain implementation",
+        "Good architecture"
+      ],
+      "areasForImprovement": [
+        "Documentation",
+        "Performance under load"
+      ]
     }
   },
   {
@@ -137,7 +171,7 @@
     "jriScore": 91.4,
     "status": "completed",
     "aiAuditSummary": {
-      "codeQuality": 9.0,
+      "codeQuality": 9,
       "innovation": 9.4,
       "documentation": 9.2,
       "testCoverage": 8.9,
@@ -145,8 +179,14 @@
       "performance": 9.1,
       "aiUsage": "High - Custom ML models with AI assistance",
       "plagiarismRisk": "Very Low",
-      "keyStrengths": ["Cutting-edge research", "Excellent documentation", "High performance"],
-      "areasForImprovement": ["Security hardening"]
+      "keyStrengths": [
+        "Cutting-edge research",
+        "Excellent documentation",
+        "High performance"
+      ],
+      "areasForImprovement": [
+        "Security hardening"
+      ]
     }
   },
   {
@@ -170,8 +210,15 @@
       "performance": 7.6,
       "aiUsage": "Very High - Core functionality built with AI",
       "plagiarismRisk": "Medium",
-      "keyStrengths": ["Practical application", "Good innovation"],
-      "areasForImprovement": ["Code originality", "Performance", "Documentation"]
+      "keyStrengths": [
+        "Practical application",
+        "Good innovation"
+      ],
+      "areasForImprovement": [
+        "Code originality",
+        "Performance",
+        "Documentation"
+      ]
     }
   },
   {
@@ -190,13 +237,20 @@
       "codeQuality": 8.2,
       "innovation": 7.9,
       "documentation": 8.4,
-      "testCoverage": 8.0,
+      "testCoverage": 8,
       "securityScore": 8.8,
       "performance": 8.1,
       "aiUsage": "Medium - OpenCV with AI enhancements",
       "plagiarismRisk": "Low",
-      "keyStrengths": ["Good documentation", "Practical utility", "Strong security"],
-      "areasForImprovement": ["Innovation factor", "Performance optimization"]
+      "keyStrengths": [
+        "Good documentation",
+        "Practical utility",
+        "Strong security"
+      ],
+      "areasForImprovement": [
+        "Innovation factor",
+        "Performance optimization"
+      ]
     }
   },
   {
@@ -220,8 +274,16 @@
       "performance": 7.8,
       "aiUsage": "Low - Minimal AI assistance",
       "plagiarismRisk": "High",
-      "keyStrengths": ["Good performance", "Fun factor"],
-      "areasForImprovement": ["Code quality", "Testing", "Originality", "Documentation"]
+      "keyStrengths": [
+        "Good performance",
+        "Fun factor"
+      ],
+      "areasForImprovement": [
+        "Code quality",
+        "Testing",
+        "Originality",
+        "Documentation"
+      ]
     }
   },
   {
@@ -245,8 +307,15 @@
       "performance": 8.5,
       "aiUsage": "High - Advanced NLP with multiple AI models",
       "plagiarismRisk": "Low",
-      "keyStrengths": ["Highly innovative", "Excellent documentation", "Research relevance"],
-      "areasForImprovement": ["Test coverage", "Performance under heavy load"]
+      "keyStrengths": [
+        "Highly innovative",
+        "Excellent documentation",
+        "Research relevance"
+      ],
+      "areasForImprovement": [
+        "Test coverage",
+        "Performance under heavy load"
+      ]
     }
   },
   {
@@ -270,8 +339,15 @@
       "performance": 7.8,
       "aiUsage": "Medium - AI for demand forecasting",
       "plagiarismRisk": "Medium",
-      "keyStrengths": ["Good documentation", "Practical application"],
-      "areasForImprovement": ["Innovation", "Code quality", "Originality"]
+      "keyStrengths": [
+        "Good documentation",
+        "Practical application"
+      ],
+      "areasForImprovement": [
+        "Innovation",
+        "Code quality",
+        "Originality"
+      ]
     }
   },
   {
@@ -292,11 +368,18 @@
       "documentation": 8.2,
       "testCoverage": 8.1,
       "securityScore": 9.3,
-      "performance": 8.0,
+      "performance": 8,
       "aiUsage": "Medium - AI chatbot for mental health support",
       "plagiarismRisk": "Low",
-      "keyStrengths": ["Social impact", "Excellent security", "Good innovation"],
-      "areasForImprovement": ["Performance", "Advanced features"]
+      "keyStrengths": [
+        "Social impact",
+        "Excellent security",
+        "Good innovation"
+      ],
+      "areasForImprovement": [
+        "Performance",
+        "Advanced features"
+      ]
     }
   },
   {
@@ -320,8 +403,16 @@
       "performance": 6.8,
       "aiUsage": "Very High - Most code generated by AI",
       "plagiarismRisk": "Very High",
-      "keyStrengths": ["Basic functionality works"],
-      "areasForImprovement": ["Originality", "Innovation", "Testing", "Code quality", "Reduce AI dependency"]
+      "keyStrengths": [
+        "Basic functionality works"
+      ],
+      "areasForImprovement": [
+        "Originality",
+        "Innovation",
+        "Testing",
+        "Code quality",
+        "Reduce AI dependency"
+      ]
     }
   },
   {
@@ -342,11 +433,18 @@
       "documentation": 9.1,
       "testCoverage": 9.2,
       "securityScore": 9.5,
-      "performance": 9.0,
+      "performance": 9,
       "aiUsage": "Medium - AI for pattern recognition enhancement",
       "plagiarismRisk": "Very Low",
-      "keyStrengths": ["Outstanding innovation", "Excellent security", "Comprehensive testing", "Industry relevance"],
-      "areasForImprovement": ["Minor performance tweaks"]
+      "keyStrengths": [
+        "Outstanding innovation",
+        "Excellent security",
+        "Comprehensive testing",
+        "Industry relevance"
+      ],
+      "areasForImprovement": [
+        "Minor performance tweaks"
+      ]
     }
   },
   {
@@ -370,8 +468,16 @@
       "performance": 8.2,
       "aiUsage": "Medium - AI for music recommendation",
       "plagiarismRisk": "Medium",
-      "keyStrengths": ["Good performance", "User experience"],
-      "areasForImprovement": ["Code quality", "Innovation", "Testing", "Originality"]
+      "keyStrengths": [
+        "Good performance",
+        "User experience"
+      ],
+      "areasForImprovement": [
+        "Code quality",
+        "Innovation",
+        "Testing",
+        "Originality"
+      ]
     }
   },
   {
@@ -395,8 +501,16 @@
       "performance": 7.9,
       "aiUsage": "Low - Basic AI for categorization",
       "plagiarismRisk": "Low",
-      "keyStrengths": ["Good documentation", "Practical utility", "Decent security"],
-      "areasForImprovement": ["Innovation", "Performance", "Advanced features"]
+      "keyStrengths": [
+        "Good documentation",
+        "Practical utility",
+        "Decent security"
+      ],
+      "areasForImprovement": [
+        "Innovation",
+        "Performance",
+        "Advanced features"
+      ]
     }
   },
   {
@@ -420,8 +534,16 @@
       "performance": 7.4,
       "aiUsage": "Medium - AI for content suggestions",
       "plagiarismRisk": "Medium",
-      "keyStrengths": ["Clean UI", "Good documentation"],
-      "areasForImprovement": ["Innovation", "Testing", "Performance", "Originality"]
+      "keyStrengths": [
+        "Clean UI",
+        "Good documentation"
+      ],
+      "areasForImprovement": [
+        "Innovation",
+        "Testing",
+        "Performance",
+        "Originality"
+      ]
     }
   },
   {
@@ -445,8 +567,16 @@
       "performance": 8.7,
       "aiUsage": "High - Advanced ML models with AI optimization",
       "plagiarismRisk": "Low",
-      "keyStrengths": ["High innovation", "Social impact", "Good performance", "Practical relevance"],
-      "areasForImprovement": ["Security features", "Documentation depth"]
+      "keyStrengths": [
+        "High innovation",
+        "Social impact",
+        "Good performance",
+        "Practical relevance"
+      ],
+      "areasForImprovement": [
+        "Security features",
+        "Documentation depth"
+      ]
     }
   },
   {
@@ -466,12 +596,20 @@
       "innovation": 6.2,
       "documentation": 7.1,
       "testCoverage": 6.5,
-      "securityScore": 7.0,
+      "securityScore": 7,
       "performance": 7.3,
       "aiUsage": "High - Heavy reliance on AI code generation",
       "plagiarismRisk": "High",
-      "keyStrengths": ["Basic functionality", "Real-time features"],
-      "areasForImprovement": ["Code originality", "Innovation", "Testing", "Reduce AI dependency"]
+      "keyStrengths": [
+        "Basic functionality",
+        "Real-time features"
+      ],
+      "areasForImprovement": [
+        "Code originality",
+        "Innovation",
+        "Testing",
+        "Reduce AI dependency"
+      ]
     }
   },
   {
@@ -486,7 +624,7 @@
     "jriScore": 90.8,
     "status": "completed",
     "aiAuditSummary": {
-      "codeQuality": 9.0,
+      "codeQuality": 9,
       "innovation": 9.4,
       "documentation": 8.8,
       "testCoverage": 8.9,
@@ -494,8 +632,28 @@
       "performance": 8.9,
       "aiUsage": "High - AI for personalized learning paths",
       "plagiarismRisk": "Very Low",
-      "keyStrengths": ["Excellent innovation", "Strong architecture", "Educational impact", "Comprehensive testing"],
-      "areasForImprovement": ["Minor UI enhancements"]
+      "keyStrengths": [
+        "Excellent innovation",
+        "Strong architecture",
+        "Educational impact",
+        "Comprehensive testing"
+      ],
+      "areasForImprovement": [
+        "Minor UI enhancements"
+      ]
     }
+  },
+  {
+    "name": "Rohit ",
+    "email": "user@gmail.com",
+    "department": "CSE",
+    "year": 1,
+    "avatarUrl": "",
+    "githubUrl": "",
+    "projectTitle": "",
+    "id": "STU-1776415431638",
+    "status": "pending",
+    "submissionDate": "2026-04-17T08:43:51.638Z",
+    "jriScore": 0
   }
 ]
